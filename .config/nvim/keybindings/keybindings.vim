@@ -29,3 +29,11 @@ nmap <C-b> :NvimTreeToggle<CR>
 imap <silent><script><expr> <C-Space> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+" Set Ctrl+Right/Left as copilot next suggestion
+imap <C-Right> <Plug>(copilot-next)
+imap <C-Left> <Plug>(copilot-previous)
+
+" Set Ctrl+Enter as copilot generate
+" imap <C-Enter> :Copilot<CR>
+" Not working
+
