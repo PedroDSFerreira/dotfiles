@@ -4,8 +4,9 @@
 
 ## Contains configs for:
     - Alacritty
+    - Starship
     - Fish
-    - Nvim
+    - Nvim (write ':PlugInstall' in Nvim to install plugins)
 
 ## Import/export list of installed packages:
 
