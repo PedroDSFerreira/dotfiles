@@ -1,4 +1,5 @@
 alacritty
+alacritty-themes
 bat
 btop
 discord
@@ -14,10 +15,33 @@ neofetch
 neovim
 noto-fonts
 noto-fonts-emoji
+nerd-fonts-noto-sans-mono 2.1.0-1
 python-pillow
 python-pip
 ripgrep
 rsync
 starship
 terminus-font
+git
+jq
+
+
+blueman
+notion-app
+nitrogen
+yay
+playerctl
+polybar
+rofi
+python
+pip
+picom-jonaburg-git
+spotify
+sqlite
+stow
+ttf-font-awesome
+ttf-nerd-fonts-symbols
+usbutils
+vlc
+wget
 
