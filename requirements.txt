@@ -14,7 +14,6 @@ glow
 neofetch
 neovim
 noto-fonts
-noto-fonts-emoji
 nerd-fonts-noto-sans-mono 2.1.0-1
 python-pillow
 python-pip
@@ -44,4 +43,7 @@ ttf-nerd-fonts-symbols
 usbutils
 vlc
 wget
-
+pacman-contrib
+python-dbus
+python-gobject
+python-gi
