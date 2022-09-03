@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 alias vs="code"
 alias vim="nvim"
 alias configs="cd ~/.dotfiles/configs/"
+alias brightness_max="sudo xbacklight -set 100"
 alias ..="cd .."
 alias ~="cd ~"
 alias cat="bat"
