@@ -231,14 +231,17 @@ globalkeys = gears.table.join(
     -- Rofi Launcher
     -- awful.key({ super }, "r", function() awful.spawn("rofi -show drun &>> /tmp/rofi.log") end,
 	--      {description = "rofi launcher", group = "launcher"}),
-    awful.key({ super }, "r", function() awful.util.spawn_with_shell("sh ~/.config/rofi/scripts/launcher_t2") end,
-	      {description = "launcher", group = "launcher"}),
+    awful.key({ super }, "r", function() awful.util.spawn_with_shell("sh ~/.config/rofi/scripts/launcher_t1") end,
+      {description = "launcher", group = "launcher"}),
+	awful.key({ alt }, "Tab", function() awful.util.spawn_with_shell("sh ~/.config/rofi/scripts/launcher_t2") end,
+      {description = "Window switcher", group = "launcher"}),
 
     -- remap volume keys to volume control
     awful.key({ }, "XF86AudioRaiseVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") end),
     awful.key({ }, "XF86AudioLowerVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%") end),
     awful.key({ }, "XF86AudioMute", function() awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
     awful.key({ }, "XF86AudioPlay", function() awful.spawn("playerctl play-pause") end),
+    awful.key({ }, "F1", function() awful.spawn("playerctl play-pause") end),
 
     -- change screen brightness
     awful.key({ }, "XF86MonBrightnessUp", function() awful.spawn("xbacklight -ctrl amdgpu_bl0 -inc 10") end),
