@@ -6,6 +6,8 @@ bat
 blueman
 btop
 btrfs-progs
+coreutils
+curl
 dbus-python
 discord
 docker
@@ -34,6 +36,7 @@ python
 python-dbus
 python-gi
 python-gobject
+ripgrep
 rofi
 rsync
 scrot
@@ -41,12 +44,17 @@ simplescreenrecorder
 spotify
 starship
 stow
+stremio
 thefuck
 thunar
 thunar-archive-plugin
+tree-sitter
 unrar
 unzip
 usbutils
+vagrant
+virtualbox
+visual-studio-code-bin
 vlc
 wget
 xclip
