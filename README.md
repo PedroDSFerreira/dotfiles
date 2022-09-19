@@ -17,14 +17,14 @@
 ## Import/export list of installed packages:
 
 ### Export:
-	> ``` bash
-	> pacman -Qqen > requirements.txt
-	> ```
+``` bash
+pacman -Qqen > requirements.txt
+```
 
 ### Import:
-	> ``` bash
-	> pacman -S - < requirements.txt
-	> ```
+``` bash
+pacman -S - < requirements.txt
+```
 
 
 ---
