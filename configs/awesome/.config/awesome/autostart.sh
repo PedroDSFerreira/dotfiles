@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 
 
@@ -11,10 +11,10 @@ if type "xrandr"; then
   len=${#array[@]}
 
   if [ $len -ne 1 ]; then
-	xrandr --output ${array[1]} --auto --primary --output ${array[0]} --auto --left-of ${array[1]}
+	  xrandr --output ${array[1]} --auto --primary --output ${array[0]} --auto --left-of ${array[1]}
 
   else
-	xrandr --output ${array[0]} --primary --auto
+	  xrandr --output ${array[0]} --primary --auto
 	
   fi
 fi
@@ -22,13 +22,6 @@ fi
 xrandr --auto
 
 
-# Run programs at startup
-nitrogen --restore
-picom
-setxkbmap -model "pc105,pc105" -layout "pt,us" -option grp:alt_shift_toggle
-kmix &
-nm-applet &
-blueman-applet &
 
 # Terminate already running bar instances
 killall -q polybar
@@ -36,4 +29,4 @@ killall -q polybar
 # polybar-msg cmd quit
 
 # Launch Polybar, using default config location ~/.config/polybar/config.ini
-polybar mybar 2>&1 | tee -a /tmp/polybar.log & disown
+polybar mybar 2>&1 | tee -a /tmp/polybar.log &
