@@ -5,6 +5,11 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
+export BROWSER=firefox
+export EDITOR=nvim
+export TERMINAL=alacritty
+export SHELL=/bin/zsh
+
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
@@ -39,6 +44,7 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+
 # see https://unix.stackexchange.com/a/295652/332452
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
@@ -48,5 +54,16 @@ export SSH_AUTH_SOCK
 
 # see https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
 mkdir -p "$HOME"/.local/share/keyrings
+
+# Run programs at startup
+picom &
+nm-applet &
+blueman-applet &
+
+# Keyboard layout
+setxkbmap -model "pc105,pc105" -layout "pt,us" -option grp:alt_shift_toggle &
+xset -b &
+thunar --daemon &
+nitrogen --restore &
 
 exec awesome
