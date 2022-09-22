@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 alias vs="code"
 alias vim="nvim"
 alias configs="cd ~/.dotfiles/configs/"
+alias workspace="cd ~/Desktop/Workspace"
 alias brightness_max="sudo xbacklight -set 100"
 alias ..="cd .."
 alias ~="cd ~"
@@ -114,20 +115,22 @@ alias ls="exa --icons -s type"
 alias lt="exa -T --icons -L=1"
 alias ltt="exa -T --icons -L=2"
 alias md="glow"
-alias pac="pacman"
+alias pac="sudo pacman"
 alias stats="btop"
 
-#h() {
-#	history $1 | fzf --layout reverse
-#}
-#
-#grep() {
-#	rg $1 | fzf
-#}
-#
-#api() {
-#	curl $1 | jq -C
-#}
+h() {
+	history $1 | fzf --layout reverse
+}
+
+
+filter() {
+	rg -l -. -i "$1" | fzf
+}
+
+# api <request type> <url> <body>
+api() {
+	curl -X $1 $2 -H "Content-Type: application/json" -d $3 | jq -C
+}
 
 # Starship
 eval source <(/usr/bin/starship init zsh --print-full-init)
@@ -136,4 +139,4 @@ eval source <(/usr/bin/starship init zsh --print-full-init)
 eval $(thefuck --alias)
 
 # Startup
-sh ~/scripts/ascii.sh
+sh ~/.scripts/ascii.sh
