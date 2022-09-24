@@ -114,7 +114,6 @@ alias la="exa -a --icons -s type"
 alias ls="exa --icons -s type"
 alias lt="exa -T --icons -L=1"
 alias ltt="exa -T --icons -L=2"
-alias md="glow"
 alias pac="sudo pacman"
 alias stats="btop"
 
