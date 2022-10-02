@@ -378,22 +378,35 @@ awful.rules.rules = {
     placement = awful.placement.no_overlap+awful.placement.no_offscreen
 }
 },
-{ rule = {
-    class = "Notepadqq"
-}, properties = {
+
+-- Floating clients.
+{   rule_any = {
+    class = {"Notepadqq", "feh"},
+}, 
+properties = {
     floating = true,
     maximized = false,
     
     placement = awful.placement.centered
 }
 },
-{   rule_any = {
-    instance = {
-        "task manager",
-    },
-    class = {
-        "feh",
-    },
+
+-- Matlab
+{   rule = {
+    class = "MATLAB R2022a - academic use",
+    instance = "sun-awt-X11-XFramePeer",
+    name = "Figure",
+},
+properties = {
+    floating = true,
+    maximized = false,
+    placement = awful.placement.centered
+}
+},
+
+-- Task Manager
+{   rule = {
+    instance = "task manager",
 },
 properties = {
     floating = true,
