@@ -69,3 +69,8 @@ xterm
 yay
 zip
 zsh
+
+# PDF reader
+zathura
+zathura-pdf-mupdf
+zathura-djvu
