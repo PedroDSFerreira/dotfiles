@@ -19,7 +19,6 @@ fzf
 git
 glow
 gnome-keyring
-jq
 neofetch
 neovim
 networkmanager
@@ -74,3 +73,7 @@ zsh
 zathura
 zathura-pdf-mupdf
 zathura-djvu
+
+# API requests
+httpie
+jq
