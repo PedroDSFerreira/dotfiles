@@ -75,6 +75,7 @@ plugins=(git zsh-autosuggestions colored-man-pages command-not-found zsh-syntax-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+# export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
