@@ -127,11 +127,6 @@ filter() {
 	rg -l -. -i "$1" | fzf
 }
 
-# api <request type> <url> <body>
-api() {
-	curl -X $1 $2 -H "Content-Type: application/json" -d $3 | jq -C
-}
-
 # Starship
 eval source <(/usr/bin/starship init zsh --print-full-init)
 
