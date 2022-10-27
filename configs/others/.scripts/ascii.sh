@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Folder with ascii art
 dir=$HOME/Pictures/ASCII/
 
