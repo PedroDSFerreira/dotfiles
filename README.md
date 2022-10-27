@@ -12,6 +12,7 @@
 - [Zsh](https://www.zsh.org/) (with [oh-my-zsh](https://ohmyz.sh/))
 - [Zathura](https://wiki.archlinux.org/title/zathura)
 - [Xorg](https://www.x.org/wiki/)
+- [feh](https://wiki.archlinux.org/title/feh)
 
 
 ---
