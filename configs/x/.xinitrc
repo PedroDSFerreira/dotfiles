@@ -64,6 +64,7 @@ blueman-applet &
 setxkbmap -model "pc105,pc105" -layout "pt,us" -option grp:alt_shift_toggle &
 xset -b &
 thunar --daemon &
-nitrogen --restore &
+
+sh $HOME/.scripts/background.sh
 
 exec awesome
