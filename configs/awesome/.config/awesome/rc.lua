@@ -76,7 +76,7 @@ awful.layout.layouts = {
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
+    awful.layout.suit.max,
     
     --awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
@@ -117,7 +117,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
--- screen.connect_signal("property::geometry", awful.spawn_with_shell("xrandr --auto"))
+screen.connect_signal("property::geometry",function(s) awful.spawn_with_shell("xrandr --auto") end)
 
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
@@ -301,7 +301,7 @@ end ,
 for i = 1, 5 do
     globalkeys = gears.table.join(globalkeys,
     -- View tag only.
-    awful.key({ super }, "#" .. i + 5,
+    awful.key({ super }, "#" .. i + 9,
     function ()
         local screen = awful.screen.focused()
         local tag = screen.tags[i]
@@ -311,7 +311,7 @@ for i = 1, 5 do
     end,
     {description = "view tag #"..i, group = "tag"}),
     -- Toggle tag display.
-    awful.key({ super, "Control" }, "#" .. i + 5,
+    awful.key({ super, "Control" }, "#" .. i + 9,
     function ()
         local screen = awful.screen.focused()
         local tag = screen.tags[i]
@@ -321,7 +321,7 @@ for i = 1, 5 do
     end,
     {description = "toggle tag #" .. i, group = "tag"}),
     -- Move client to tag.
-    awful.key({ super, "Shift" }, "#" .. i + 5,
+    awful.key({ super, "Shift" }, "#" .. i + 9,
     function ()
         if client.focus then
             local tag = client.focus.screen.tags[i]
@@ -332,7 +332,7 @@ for i = 1, 5 do
     end,
     {description = "move focused client to tag #"..i, group = "tag"}),
     -- Toggle tag on focused client.
-    awful.key({ super, "Control", "Shift" }, "#" .. i + 5,
+    awful.key({ super, "Control", "Shift" }, "#" .. i + 9,
     function ()
         if client.focus then
             local tag = client.focus.screen.tags[i]
