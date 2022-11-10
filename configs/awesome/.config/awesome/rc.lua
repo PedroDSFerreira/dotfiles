@@ -63,21 +63,17 @@ alt = "Mod1"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    -- awful.layout.suit.tile.left,
-    awful.layout.suit.magnifier,    
+    awful.layout.suit.max,
     awful.layout.suit.tile.bottom,
+    awful.layout.suit.magnifier,
+    -- awful.layout.suit.tile.left
     -- awful.layout.suit.tile.top,
-    
     -- awful.layout.suit.fair,
     --awful.layout.suit.floating,
-    
     --awful.layout.suit.max.fullscreen,
-    
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    
     --awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
@@ -166,8 +162,13 @@ awful.key({ super,           }, "u", awful.client.urgent.jumpto,
 {description = "jump to urgent client", group = "client"}),
 
 -- Standard program
-awful.key({ super,           }, "Return", function () awful.spawn(terminal) end,
-{description = "open a terminal", group = "launcher"}),
+
+-- Only works with tabbed (https://tools.suckless.org/tabbed/)
+awful.key({ super,           }, "Return", function () awful.util.spawn_with_shell('wmctrl -x -a "tabbed" || tabbed -c alacritty --embed') end,
+{description = "Open multi-tabbed terminal", group = "launcher"}),
+
+awful.key({ alt, "Control" }, "Return", function () awful.spawn('alacritty') end,
+{description = "Open a terminal", group = "launcher"}),
 awful.key({ super, "Control" }, "r", awesome.restart,
 {description = "reload awesome", group = "awesome"}),
 awful.key({ super, "Shift"   }, "q", awesome.quit,
