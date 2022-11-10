@@ -11,6 +11,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'windwp/nvim-autopairs'
 	Plug 'github/copilot.vim'
 	Plug 'kyazdani42/nvim-tree.lua'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 let g:dracula_colorterm = 0
