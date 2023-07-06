@@ -32,7 +32,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'mbbill/undotree'
 call plug#end()
 
-source $HOME/.config/nvim/vim-plug/plugins/dracula.vim
+source $HOME/.config/nvim/vim-plug/plugins/dracula.lua
 source $HOME/.config/nvim/vim-plug/plugins/nvim-tree.lua
 source $HOME/.config/nvim/vim-plug/plugins/treesitter.lua
 source $HOME/.config/nvim/vim-plug/plugins/lsp-zero.lua
