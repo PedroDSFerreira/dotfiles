@@ -27,6 +27,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" Telescope
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+
+	" Undo Tree
+	Plug 'mbbill/undotree'
 call plug#end()
 
 source $HOME/.config/nvim/vim-plug/plugins/dracula.vim
@@ -34,3 +37,5 @@ source $HOME/.config/nvim/vim-plug/plugins/nvim-tree.lua
 source $HOME/.config/nvim/vim-plug/plugins/treesitter.lua
 source $HOME/.config/nvim/vim-plug/plugins/lsp-zero.lua
 source $HOME/.config/nvim/vim-plug/plugins/telescope.lua
+source $HOME/.config/nvim/vim-plug/plugins/copilot.lua
+source $HOME/.config/nvim/vim-plug/plugins/undotree.lua
