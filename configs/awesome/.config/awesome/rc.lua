@@ -122,11 +122,11 @@ end)
 -- }}}
 
 -- {{{ Mouse bindings
-root.buttons(gears.table.join(
-awful.button({ }, 3, function () mymainmenu:toggle() end),
-awful.button({ }, 4, awful.tag.viewnext),
-awful.button({ }, 5, awful.tag.viewprev)
-))
+-- root.buttons(gears.table.join(
+-- awful.button({ }, 3, function () mymainmenu:toggle() end),
+-- awful.button({ }, 4, awful.tag.viewnext),
+-- awful.button({ }, 5, awful.tag.viewprev)
+-- ))
 -- }}}
 
 -- {{{ Key bindings
@@ -248,7 +248,7 @@ awful.key({ super }, "e", function() awful.spawn("thunar") end,
 {description = "Open file explorer", group = "Shortcuts"}),
 
 
-awful.key({ super, "Shift" }, "s", function() awful.util.spawn_with_shell("scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -s -l mode=edge -e 'xclip -selection clipboard -t image/png -i $f'") end,
+awful.key({ super, "Shift" }, "s", function() awful.util.spawn_with_shell("scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -s -e 'xclip -selection clipboard -t image/png -i $f'") end,
 {description = "Take screenshot", group = "screen"})
 )
 
