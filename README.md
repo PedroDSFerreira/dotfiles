@@ -5,7 +5,7 @@
 - [Alacritty](https://github.com/alacritty/alacritty)
 - [AwesomeWM](https://awesomewm.org/)
 - [Fish](https://fishshell.com/)
-- [Nvim](https://neovim.io/) (write ':PlugInstall' in Nvim to install plugins)
+- [Nvim (NvChad)](https://nvchad.com/)
 - [Picom](https://github.com/jonaburg/picom)
 - [Polybar](https://github.com/polybar/polybar) (to properly work, install [Rofi](https://github.com/davatorium/rofi) and [this collection](https://github.com/adi1090x/rofi))
 - [Starship](https://starship.rs/)
