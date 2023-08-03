@@ -43,6 +43,7 @@ mkdir -p "$HOME"/.local/share/keyrings
 picom &
 nm-applet &
 blueman-applet &
+kdeconnect-indicator &
 
 # Keyboard layout
 setxkbmap -model "pc105,pc105" -layout "pt,us" -option grp:alt_shift_toggle &
