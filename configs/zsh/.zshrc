@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -135,3 +136,7 @@ eval $(thefuck --alias)
 
 # Startup
 sh ~/.scripts/ascii.sh
+
+# ruby config
+export PATH="$PATH:/home/pedro/.local/share/gem/ruby/2.0.0/bin"
+eval "$(rbenv init - zsh)"
