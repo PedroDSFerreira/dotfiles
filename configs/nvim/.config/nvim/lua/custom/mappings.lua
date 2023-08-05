@@ -58,7 +58,7 @@ M.aerial = {
 
 M.zen = {
   n = {
-    ["<leader>tz"] = {
+    ["<leader>z"] = {
       function()
         require("true-zen.ataraxis").toggle()
       end,
@@ -81,7 +81,7 @@ M.zen = {
   },
 
   v = {
-    ["<leader>tn"] = { ":'<,'>TZNarrow<CR>", "Toggle narrow mode" },
+    ["<leader>z"] = { ":'<,'>TZNarrow<CR>", "Toggle narrow mode" },
   }
 }
 
