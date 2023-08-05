@@ -40,9 +40,6 @@ M.treesitter = {
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
   },
 }
 
@@ -91,6 +88,13 @@ M.cmp = {
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
   },
+}
+
+M.blankline = {
+  show_current_context_start = false,
+}
+
+M.telescope = {
 }
 
 return M

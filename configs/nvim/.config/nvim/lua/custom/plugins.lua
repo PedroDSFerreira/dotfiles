@@ -17,7 +17,6 @@ local plugins = {
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
@@ -38,7 +37,17 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  -- Install a plugin
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = overrides.blankline,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+  },
+
+  -- My plugins
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -49,7 +58,7 @@ local plugins = {
 
   {
     "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
+    event = "VimEnter",
     config = function()
       require "custom.configs.copilot"
     end,
@@ -68,19 +77,68 @@ local plugins = {
     opts = overrides.cmp,
   },
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  -- todo comments
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
+  },
 
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  -- easymotion
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
+  },
+
+  -- code outline
+  {
+    "stevearc/aerial.nvim",
+    event = "VeryLazy",
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+      {
+        "nvim-telescope/telescope.nvim",
+        config = function()
+          require("telescope").load_extension("aerial")
+        end,
+      },
+    },
+    config = function()
+      require("aerial").setup()
+    end,
+  },
+
+  -- zen mode
+  {
+    "Pocco81/true-zen.nvim",
+    event = "BufRead",
+    config = function()
+      require "custom.configs.zen"
+    end,
+  },
+
+  {
+    "folke/twilight.nvim",
+    event = "BufRead",
+    config = function()
+      require("twilight").setup()
+    end,
+  }
 }
 
 return plugins
