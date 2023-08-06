@@ -107,7 +107,6 @@ alias vs="code"
 alias vim="nvim"
 alias configs="cd ~/.dotfiles/configs/"
 alias workspace="cd ~/Desktop/Workspace"
-alias brightness_max="sudo xbacklight -set 100"
 alias ..="cd .."
 alias ~="cd ~"
 alias cat="bat"
@@ -128,14 +127,18 @@ filter() {
 	rg -l -. -i "$1" | fzf
 }
 
+brightness() {
+  sh ~/.scripts/brightness.sh $1
+}
+
 # Starship
 eval source <(/usr/bin/starship init zsh --print-full-init)
 
 # TheFuck
 eval $(thefuck --alias)
 
-# Startup
-sh ~/.scripts/ascii.sh
+# Startup ascii script (shows ascii art)
+# sh ~/.scripts/ascii.sh
 
 # ruby config
 export PATH="$PATH:/home/pedro/.local/share/gem/ruby/2.0.0/bin"
