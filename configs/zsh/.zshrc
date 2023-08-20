@@ -134,9 +134,6 @@ brightness() {
 # Starship
 eval source <(/usr/bin/starship init zsh --print-full-init)
 
-# TheFuck
-eval $(thefuck --alias)
-
 # Startup ascii script (shows ascii art)
 # sh ~/.scripts/ascii.sh
 
