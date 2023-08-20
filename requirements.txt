@@ -1,79 +1,122 @@
-acpilight
-alacritty
-alacritty-themes
-awesome
-bat
-blueman
-btop
+# System
 btrfs-progs
 coreutils
-curl
-dbus-python
-discord
-docker
-docker-compose
-exa
-fd
-firefox
-fzf
-git
-glow
-gnome-keyring
-neofetch
-neovim
-networkmanager
-nitrogen
-notepadqq
-notion-app
-os-prober
-pamac
-picom-jonaburg-git
-pip
-playerctl
-polybar
-python
-python-dbus
-python-gi
-python-gobject
-ripgrep
-rofi
-rsync
-scrot
-simplescreenrecorder
-spotify
-starship
-stow
-stremio
-thefuck
-thunar
-thunar-archive-plugin
-tree-sitter
-unrar
-unzip
-usbutils
-vagrant
-virtualbox
-visual-studio-code-bin
-vlc
-wget
-xclip
-xf86-input-synaptics
-xf86-input-wacom
-xf86-video-amdgpu
-xorg-setxkbmap
+xorg-xdm
+xorg-setxkbmap # keyboard layout
 xorg-xkill
 xorg-xprop
 xorg-xrandr
+xorg-xbacklight
+xorg-xset
+pamac # arch package manager
 xterm
-yay
+
+# Drivers
+xf86-input-synaptics
+xf86-input-wacom
+xf86-video-amdgpu
+usbutils
+
+# Window manager
+awesome
+picom-jonaburg-git # X11 compositor
+feh # wallpaper
+polybar # status bar
+    # Dependencies
+    dbus-python
+
+# Network
+networkmanager
+network-manager-applet
+termshark # wireshark clone
+
+# Bluetooth
+blueman
+bluez
+bluez-utils
+
+# Audio
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+pavucontrol
+
+# Media
+playerctl
+
+# Services
+kdeconnect
+vagrant
+docker
+docker-compose
+
+# Key management
+gnome-keyring
+seahorse
+
+# Fonts
+ttf-jetbrains-mono-nerd
+
+# Man pages
+man-pages
+tealdeer
+
+# Terminal commands
+yay # aur package manager
+wget
+xclip # clipboard
 zip
-zsh
-
-# PDF reader
-zathura
-zathura-pdf-mupdf
-zathura-djvu
-
-# API requests
+unrar
+unzip
+stow
+rsync
 httpie
 jq
+scrot
+ripgrep
+exa
+fd
+fzf
+git
+glow
+bat
+btop
+curl
+rofi
+    # Dependencies
+    python-dbus
+    python-gi
+    python-gobject
+
+# Apps
+thunar
+thunar-archive-plugin
+simplescreenrecorder
+virtualbox
+stremio
+visual-studio-code-bin
+spotify
+notepadqq
+notion-app
+vlc
+discord
+gimp
+
+# Terminal stuff
+alacritty
+alacritty-themes
+zsh
+starship
+neovim
+tmux
+
+# Development
+pip
+python
+postgresql
+ruby
+postman-bin
+
+# Games
+supertuxcart
+supertux
