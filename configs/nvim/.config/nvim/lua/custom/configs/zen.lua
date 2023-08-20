@@ -1,5 +1,9 @@
-require("true-zen").setup {
-    integrations = {
-        twilight = true, -- enable to start twilight when zen mode opens
+require("zen-mode").setup({
+  window = {
+    width = 0.7,
+    height = 0.9,
+    options = {
+        scrolloff = 10,
     }
- }
+  }
+})

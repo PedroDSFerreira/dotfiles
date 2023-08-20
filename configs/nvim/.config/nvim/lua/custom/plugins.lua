@@ -123,9 +123,8 @@ local plugins = {
     end,
   },
 
-  -- zen mode
   {
-    "Pocco81/true-zen.nvim",
+    "folke/zen-mode.nvim",
     event = "BufRead",
     config = function()
       require "custom.configs.zen"

@@ -3,27 +3,6 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
--- if you just want default config for the servers then put them in a table
--- local servers = {
---   "html",
---   "emmet_ls",
---   "cssls",
---   "tsserver",
---   "eslint",
---   "clangd",
---   "arduino_language_server",
---   "lua_ls",
---   "docker_compose_language_service",
---   "dockerls",
---   "jsonls",
---   "solargraph",
---   "pyright",
---   "yamlls",
---   "bashls",
---   "matlab_ls",
---   "rust_analyzer",
---   "sqlls",
--- }
 local servers = {
   "clangd",
   "html",
@@ -35,6 +14,7 @@ local servers = {
   "docker_compose_language_service",
   "dockerls",
   "jsonls",
+  -- "rubocop",
   "solargraph",
   "pyright",
   "yamlls",
@@ -52,3 +32,9 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig["solargraph"].setup {
+  flags = {
+        debounce_text_changes = 150,
+    },
+}

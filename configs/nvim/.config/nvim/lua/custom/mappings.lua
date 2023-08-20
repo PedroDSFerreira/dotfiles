@@ -3,10 +3,20 @@ local M = {}
 
 M.general = {
   n = {
+    -- ["<leader>f"] = { name = "+Find" },
+    -- ["<leader>g"] = { name = "+Git" },
+    -- ["<leader>t"] = { name = "+Toggle" },
+    -- ["<leader>c"] = { name = "+Code" },
+
     ["<leader>tt"] = {
       "<cmd>lua require('base46').toggle_transparency()<CR>",
       "Toggle transparency",
     },
+    -- ["<leader>th"] = {
+    --   "",
+    --   "Horizontal Terminal",
+    -- },
+
   },
 }
 
@@ -31,8 +41,8 @@ M.comment = {
 
 M.nvimtree = {
   n = {
-    -- toggle
     ["<C-b>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+    ["<leader>b"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
   },
 }
 
@@ -43,46 +53,40 @@ M.telescope = {
     ["<leader>fr"] = { "<cmd> Telescope oldfiles <CR>", "Find recent files" },
     ["<leader>fc"] = { "<cmd> Telescope aerial <CR>", "Find code blocks" },
     ["<leader>ff"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find current buffer" },
-    ["<leader>fd"] = { "<cmd> Telescope lsp_definitions <CR>", "Find definition" },
+    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+    ["<leader>gb"] = { "<cmd> Telescope git_branches <CR>", "Git branches" },
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+    ["<leader>gf"] = { "<cmd> Telescope git_files <CR>", "Git files" },
 
   },
 }
 
 M.aerial = {
   n = {
-    ["<leader>a"] = { "<cmd> AerialToggle <CR>", "Toggle aerial" },
     ["m"] = { "<cmd> AerialPrev <CR>", "Previous" },
     ["n"] = { "<cmd> AerialNext <CR>", "Next" },
   },
+}
+
+M.lsp = {
+  n = {
+    ["<leader>cd"] = { "<cmd> Telescope lsp_definitions <CR>", "Go to definition" },
+    ["<leader>ci"] = { "<cmd> Telescope lsp_implementations <CR>", "Go to implementation" },
+    ["<leader>cr"] = { "<cmd> Telescope lsp_references <CR>", "Go to references" },
+    ["<leader>cs"] = { "<cmd> Telescope lsp_document_symbols <CR>", "Go to document symbols" },
+    ["<leader>ct"] = { "<cmd> Telescope lsp_type_definitions <CR>", "Type definition" },
+  }
 }
 
 M.zen = {
   n = {
     ["<leader>z"] = {
       function()
-        require("true-zen.ataraxis").toggle()
+        require("zen-mode").toggle()
       end,
       "Toggle zen mode"
     },
-
-    ["<leader>tm"] = {
-      function()
-        require("true-zen.minimalist").toggle()
-      end,
-      "Toggle minimalist mode"
-    },
-
-    ["<leader>tf"] = {
-      function()
-        require("true-zen.ataraxis").toggle()
-      end,
-      "Toggle focus mode"
-    },
   },
-
-  v = {
-    ["<leader>z"] = { ":'<,'>TZNarrow<CR>", "Toggle narrow mode" },
-  }
 }
 
 -- Disabled default mappings
@@ -98,6 +102,10 @@ M.disabled = {
     ["<leader>cm"] = "",
     ["<leader>ch"] = "",
     ["<leader>cc"] = "",
+    ["<leader>gt"] = "",
+    ["<leader>D"] = "",
+    ["<leader>th"] = "",
+
   },
 
   v = {
