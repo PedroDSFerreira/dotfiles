@@ -48,7 +48,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = os.getenv("TERM") or "xterm"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -91,25 +91,25 @@ awful.wibar {
 }
 
 -- Create a launcher widget and a main menu
-myawesomemenu = {
-    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-    { "manual", terminal .. " -e man awesome" },
-    { "edit config", editor_cmd .. " " .. awesome.conffile },
-    { "restart", awesome.restart },
-    { "quit", function() awesome.quit() end },
-}
-
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-{ "open terminal", terminal }
-}
-})
+-- myawesomemenu = {
+--     { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+--     { "manual", terminal .. " -e man awesome" },
+--     { "edit config", editor_cmd .. " " .. awesome.conffile },
+--     { "restart", awesome.restart },
+--     { "quit", function() awesome.quit() end },
+-- }
+--
+-- mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+-- { "open terminal", terminal }
+-- }
+-- })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+-- mykeyboardlayout = awful.widget.keyboardlayout()
 
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
@@ -183,8 +183,6 @@ awful.key({ super }, "Up", function (c) awful.client.incwfact(0.05, client.focus
 { description = "increase master height factor", group = "layout" }),
 awful.key({ super }, "Down", function (c) awful.client.incwfact(-0.05, client.focus) end,
 { description = "decrease master height factor", group = "layout" }),
---awful.key({ super,           }, "Down",     function () awful.tag.incmhfact(-0.05)          end,
---  {description = "decrease master height factor", group = "layout"}),
 
 
 awful.key({ super,"Shift"}, "Right",     function () awful.tag.incnmaster( 1, nil, true) end,
