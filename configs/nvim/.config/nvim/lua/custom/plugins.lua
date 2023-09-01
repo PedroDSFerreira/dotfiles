@@ -137,6 +137,11 @@ local plugins = {
     config = function()
       require("twilight").setup()
     end,
+  },
+
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false
   }
 }
 

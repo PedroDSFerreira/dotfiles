@@ -7,6 +7,10 @@ M.general = {
     -- ["<leader>g"] = { name = "+Git" },
     -- ["<leader>t"] = { name = "+Toggle" },
     -- ["<leader>c"] = { name = "+Code" },
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
 
     ["<leader>tt"] = {
       "<cmd>lua require('base46').toggle_transparency()<CR>",
@@ -104,7 +108,7 @@ M.disabled = {
     ["<leader>cc"] = "",
     ["<leader>gt"] = "",
     ["<leader>D"] = "",
-    ["<leader>th"] = "",
+    -- ["<leader>th"] = "",
 
   },
 
