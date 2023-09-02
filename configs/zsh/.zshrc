@@ -122,11 +122,6 @@ h() {
 	history $1 | fzf --layout reverse
 }
 
-
-filter() {
-	rg -l -. -i "$1" | fzf
-}
-
 brightness() {
   sh ~/.scripts/brightness.sh $1
 }
