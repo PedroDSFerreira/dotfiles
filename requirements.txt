@@ -74,7 +74,7 @@ httpie
 jq
 scrot
 ripgrep
-exa
+eza
 fd
 fzf
 git
