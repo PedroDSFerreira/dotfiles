@@ -1,8 +1,7 @@
 return {
     'norcalli/nvim-colorizer.lua',
-    event = { "BufReadPre", "BufNewFile"},
-    config = function ()
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
         require('colorizer').setup()
     end,
-    -- TODO: attach to buffer
 }

@@ -24,13 +24,13 @@ return {
         indent_markers = {
           enable = true
         },
-     },
+      },
       -- disable window_picker for
       -- explorer to work well with
       -- window splits
       actions = {
         open_file = {
-	  quit_on_open = true,
+          quit_on_open = true,
           window_picker = {
             enable = false,
           },

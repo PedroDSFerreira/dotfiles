@@ -24,7 +24,7 @@ return {
 
 				-- Ruby
 				formatting.erb_format,
-				-- diagnostics.erb_lint,
+				diagnostics.erb_lint,
 				-- diagnostics.rubocop,
 				-- formatting.rubocop,
 

@@ -7,13 +7,13 @@ return {
   config = function()
     -- import mason
     local mason = require("mason")
-    
+
     -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-    
+
     -- import mason-null-ls
     local mason_null_ls = require("mason-null-ls")
-    
+
     -- enable mason and configure icons
     mason.setup({
       ui = {
@@ -28,7 +28,7 @@ return {
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
     })
-    
+
     mason_null_ls.setup({
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true,

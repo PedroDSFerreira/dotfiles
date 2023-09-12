@@ -1,5 +1,5 @@
 return {
   "folke/twilight.nvim",
-  event = { "BufReadPre", "BufNewFile"},
+  event = { "BufReadPre", "BufNewFile" },
   config = true,
 }
