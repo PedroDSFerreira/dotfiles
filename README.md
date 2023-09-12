@@ -4,7 +4,7 @@
 - [Alacritty](https://github.com/alacritty/alacritty)
 - [AwesomeWM](https://awesomewm.org/)
 - [Fish](https://fishshell.com/)
-- [Nvim (NvChad)](https://nvchad.com/)
+- [Nvim](https://neovim.io/)
 - [Tmux](https://github.com/tmux/tmux/wiki)
 - [Picom](https://github.com/jonaburg/picom)
 - [Polybar](https://github.com/polybar/polybar) (to properly work, install [Rofi](https://github.com/davatorium/rofi) and [this collection](https://github.com/adi1090x/rofi))
