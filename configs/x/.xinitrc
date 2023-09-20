@@ -9,6 +9,7 @@ export BROWSER=brave
 export EDITOR=nvim
 export TERMINAL=alacritty
 export SHELL=/bin/zsh
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # merge in defaults and keymaps
 
