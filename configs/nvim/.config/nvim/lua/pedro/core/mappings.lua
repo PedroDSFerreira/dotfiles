@@ -11,10 +11,10 @@ keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 
 -- indent lines
 -- in visual mode, keep lines selected
-keymap.set("v", "T", "<gv", { desc = "Indent left" })
-keymap.set("v", "t", ">gv", { desc = "Indent right" })
-keymap.set("n", "T", "<<", { desc = "Indent left" })
-keymap.set("n", "t", ">>", { desc = "Indent right" })
+keymap.set("v", "<A-h>", "<gv", { desc = "Indent left" })
+keymap.set("v", "<A-l>", ">gv", { desc = "Indent right" })
+keymap.set("n", "<A-h>", "<<", { desc = "Indent left" })
+keymap.set("n", "<A-l>", ">>", { desc = "Indent right" })
 
 -- page jump keeping cursor position
 keymap.set("n", "<C-d>", "<C-d>zz")
@@ -31,3 +31,8 @@ keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
 keymap.set("n", "<leader>y", '"+Y', { desc = "Yank to clipboard" })
 -- delete keeping clipboard
 keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete keeping clipboard" })
+
+-- buffer navigation
+keymap.set("n", "<leader>l", ":bnext<CR>", { desc = "Next buffer" })
+keymap.set("n", "<leader>h", ":bprevious<CR>", { desc = "Previous buffer" })
+keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Close buffer" })

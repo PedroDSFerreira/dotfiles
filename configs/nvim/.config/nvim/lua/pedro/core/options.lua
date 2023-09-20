@@ -24,7 +24,6 @@ opt.incsearch = true
 
 opt.showtabline = 0
 opt.termguicolors = true
-opt.showmode = false
 
 -- remove trailing whitespace on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
