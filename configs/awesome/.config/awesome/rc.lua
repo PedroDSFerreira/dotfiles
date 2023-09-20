@@ -197,9 +197,11 @@ globalkeys = gears.table.join(
     awful.key({ super }, "p", function() menubar.show() end,
         { description = "show the menubar", group = "launcher" }),
     -- Rofi Launcher
-    awful.key({ super }, "r", function() awful.util.spawn_with_shell("sh ~/.config/rofi/scripts/launcher_t1") end,
+    awful.key({ super }, "r",
+        function() awful.util.spawn_with_shell(string.format("%s/.config/rofi/scripts/launcher_t1", os.getenv("HOME"))) end,
         { description = "launcher", group = "launcher" }),
-    awful.key({ alt }, "Tab", function() awful.util.spawn_with_shell("sh ~/.config/rofi/scripts/launcher_t2") end,
+    awful.key({ alt }, "Tab",
+        function() awful.util.spawn_with_shell(string.format("%s/.config/rofi/scripts/launcher_t1", os.getenv("HOME"))) end,
         { description = "Window switcher", group = "launcher" }),
     awful.key({ alt, "Control" }, "Delete", function() awful.spawn("xkill") end,
         { description = "Kill window", group = "launcher" }),
@@ -227,8 +229,10 @@ globalkeys = gears.table.join(
     awful.key({ super }, "e", function() awful.spawn("thunar") end,
         { description = "Open file explorer", group = "Shortcuts" }),
     awful.key({ super, "Shift" }, "s",
-        function() awful.util.spawn_with_shell(
-            "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -s -e 'xclip -selection clipboard -t image/png -i $f'") end,
+        function()
+            awful.util.spawn_with_shell(
+                "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -s -e 'xclip -selection clipboard -t image/png -i $f'")
+        end,
         { description = "Take screenshot", group = "screen" })
 )
 
@@ -408,7 +412,7 @@ awful.rules.rules = {
     {
         rule_any = {
             instance = {
-                "DTA", -- Firefox addon DownThemAll.
+                "DTA",   -- Firefox addon DownThemAll.
                 "copyq", -- Includes session name in class.
                 "pinentry",
             },
@@ -417,7 +421,7 @@ awful.rules.rules = {
                 "Blueman-manager",
                 "Gpick",
                 "Kruler",
-                "MessageWin", -- kalarm.
+                "MessageWin",  -- kalarm.
                 "Sxiv",
                 "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
                 "Wpa_gui",
@@ -432,9 +436,9 @@ awful.rules.rules = {
                 "Event Tester", -- xev.
             },
             role = {
-                "AlarmWindow", -- Thunderbird's calendar.
+                "AlarmWindow",   -- Thunderbird's calendar.
                 "ConfigManager", -- Thunderbird's about:config.
-                "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+                "pop-up",        -- e.g. Google Chrome's (detached) Developer Tools.
             }
         },
         properties = { floating = true, position = awful.placement.closest_corner }
@@ -474,7 +478,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 5
 
 -- Autostart
-awful.spawn.with_shell("~/.config/awesome/autostart.sh")
+awful.spawn.with_shell(string.format("%s/.scripts/autostart.sh", os.getenv("HOME")))
 
 -- Padding on all screens
 beautiful.padding = { top = 39 }
