@@ -24,8 +24,9 @@ keymap.set("n", "n", "nzzv")
 keymap.set("n", "N", "Nzzv")
 
 -- clipboard
--- replace keeping clipboard
-keymap.set("x", "<leader>p", '"_dP', { desc = "Paste keeping clipboard" })
+-- paste from clipboard
+keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from clipboard" })
+keymap.set("n", "<leader>p", '"+P', { desc = "Paste from clipboard" })
 -- yank to clipboard
 keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
 keymap.set("n", "<leader>y", '"+Y', { desc = "Yank to clipboard" })
