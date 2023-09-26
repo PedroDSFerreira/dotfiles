@@ -65,6 +65,7 @@ eval source <(/usr/bin/starship init zsh --print-full-init)
 # Startup ascii script (shows ascii art)
 # sh ~/.scripts/ascii.sh
 
+# rust config
+. "$HOME/.cargo/env"
 # ruby config
-export PATH="$PATH:/home/pedro/.local/share/gem/ruby/2.0.0/bin"
 eval "$(rbenv init - zsh)"
