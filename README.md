@@ -9,10 +9,10 @@
 - [Polybar](https://github.com/polybar/polybar) (to properly work, install [Rofi](https://github.com/davatorium/rofi) and [this collection](https://github.com/adi1090x/rofi))
 - [Starship](https://starship.rs/)
 - [Zsh](https://www.zsh.org/)
-- [Zathura](https://wiki.archlinux.org/title/zathura)
 - [Xorg](https://www.x.org/wiki/)
 - [feh](https://wiki.archlinux.org/title/feh)
 - [lf](https://github.com/gokcehan/lf)
+- git + [lazygit](https://github.com/jesseduffield/lazygit)
 
 ---
 ## Packages
