@@ -1,4 +1,16 @@
+gui:
+  theme:
+    activeBorderColor:
+      - '#f5e0dc'
+      - bold
+  mouseEvents: false
+  nerdFontsVersion: "2"
+  border: 'rounded'
+  showRandomTip: false
+  showBottomLine: false
+  showCommandLog: false
 git:
+  parseEmoji: true
   paging:
     colorArg: always
     pager: delta --paging=never
