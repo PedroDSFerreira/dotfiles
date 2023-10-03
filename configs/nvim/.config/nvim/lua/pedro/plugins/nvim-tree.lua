@@ -18,6 +18,7 @@ return {
 			vim.keymap.set("n", "%", api.node.open.vertical, opts("Open: Horizontal Split"))
 			vim.keymap.set("n", '"', api.node.open.horizontal, opts("Open: Vertical Split"))
 			vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
+			vim.keymap.del("n", "s", { buffer = bufnr })
 		end
 
 		local nvimtree = require("nvim-tree")
