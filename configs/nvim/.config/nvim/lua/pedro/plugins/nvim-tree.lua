@@ -4,6 +4,22 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
+		local set_mappings = function(bufnr)
+			local api = require("nvim-tree.api")
+
+			local function opts(desc)
+				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+			end
+
+			-- default mappings
+			api.config.mappings.default_on_attach(bufnr)
+
+			-- custom mappings
+			vim.keymap.set("n", "%", api.node.open.vertical, opts("Open: Horizontal Split"))
+			vim.keymap.set("n", '"', api.node.open.horizontal, opts("Open: Vertical Split"))
+			vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
+		end
+
 		local nvimtree = require("nvim-tree")
 
 		-- recommended settings from nvim-tree documentation
@@ -39,6 +55,7 @@ return {
 			git = {
 				ignore = false,
 			},
+			on_attach = set_mappings,
 		})
 	end,
 	init = function()
