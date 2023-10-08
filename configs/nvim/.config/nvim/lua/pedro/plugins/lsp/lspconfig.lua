@@ -15,7 +15,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		local opts = { noremap = true, silent = true }
-		local on_attach = function(client, bufnr)
+		local on_attach = function(_, bufnr)
 			opts.buffer = bufnr
 
 			-- set keybinds
@@ -90,10 +90,6 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -121,20 +117,20 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-		lspconfig["rust_analyzer"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = {
-				["rust-analyzer"] = {
-					diagnostics = {
-						enable = false,
-					},
-				},
-			},
-		})
-		lspconfig["solargraph"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
+		-- lspconfig["rust_analyzer"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	settings = {
+		-- 		["rust-analyzer"] = {
+		-- 			diagnostics = {
+		-- 				enable = false,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
+		-- lspconfig["solargraph"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 	end,
 }

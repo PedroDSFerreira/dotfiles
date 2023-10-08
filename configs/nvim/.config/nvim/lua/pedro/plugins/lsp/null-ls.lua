@@ -21,26 +21,26 @@ return {
 				diagnostics.flake8,
 				formatting.isort,
 				formatting.black,
-
+				formatting.autoflake,
 				-- Ruby
-				formatting.erb_format,
 				diagnostics.erb_lint,
+				formatting.erb_format,
 				-- diagnostics.rubocop,
-				-- formatting.rubocop,
-
-				-- Java
+				formatting.rubocop,
 				-- Rust
-				-- C
-				diagnostics.clang_check,
+				formatting.rustfmt,
+				-- C/C++/Java
 				formatting.clang_format,
-				-- Cpp
-				diagnostics.cpplint,
-
-				-- C#
-				-- JavaScript
+				-- JS/TS/HTML/CSS/MD/JSON
 				diagnostics.eslint,
+				formatting.prettier,
 				-- Lua
 				formatting.stylua,
+				-- Go
+				formatting.gofmt,
+				formatting.goimports,
+				-- Shell
+				formatting.shfmt,
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)
