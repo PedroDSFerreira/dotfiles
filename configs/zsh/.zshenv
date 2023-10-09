@@ -1,4 +1,5 @@
 export XDG_CONFIG_HOME="$HOME/.config"
+export SCRIPTS_DIR="$HOME/.scripts"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export GOPATH="$HOME/go";
 export GOROOT="$HOME/.go";

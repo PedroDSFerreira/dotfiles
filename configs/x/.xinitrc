@@ -50,6 +50,6 @@ setxkbmap -model "pc105,pc105" -layout "pt,us" -option grp:alt_shift_toggle &
 xset -b &
 thunar --daemon &
 
-sh $HOME/.scripts/background.sh
+sh $SCRIPTS_DIR/background.sh
 
 exec awesome

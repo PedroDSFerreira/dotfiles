@@ -478,7 +478,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 5
 
 -- Autostart
-awful.spawn.with_shell(string.format("%s/.scripts/autostart.sh", os.getenv("HOME")))
+awful.spawn.with_shell(string.format("%s/autostart.sh", os.getenv("SCRIPTS_DIR")))
 
 -- Padding on all screens
 beautiful.padding = { top = 39 }

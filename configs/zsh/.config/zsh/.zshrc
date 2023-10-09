@@ -10,7 +10,7 @@ plugins=(
   zdharma/fast-syntax-highlighting
 )
 
-source $ZDOTDIR/plugins.zsh $plugins
+source $SCRIPTS_DIR/zsh_plugins.zsh $plugins
 
 unset plugins
 
@@ -57,7 +57,7 @@ h() {
 }
 
 brightness() {
-  sh ~/.scripts/brightness.sh $1
+  sh $SCRIPTS_DIR/brightness.sh $1
 }
 
 # Starship
