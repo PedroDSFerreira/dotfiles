@@ -1,34 +1,24 @@
+# SETTINGS
+
 # interpreter for shell commands
 set shell sh
 set hidden true
 set shellopts '-eu'
-
 set icons
-
 set previewer ~/.scripts/lf_preview.sh
-cmd open $rifle $fx
-
 set ifs "\n"
-
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
-
 # Use the `dim` attribute instead of underline for the cursor in the preview pane
 set cursorpreviewfmt "\033[7;2m"
+# jump to the current match at each keystroke while typing
+set incsearch true
+# end when there is only a single match
+set findlen 0
 
-# use enter for shell commands
-map <enter> shell
+# COMMANDS
 
-# show the result of execution of previous commands
-map ` !true
-
-# execute current file (must be executable)
-map x $$f
-map X !$f
-
-# dedicated keys for file opener actions
-map o &mimeopen $f
-map O $mimeopen --ask $f
+cmd open $rifle $fx
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
@@ -41,12 +31,9 @@ cmd open &{{
     esac
 }}
 
-# mkdir command. See wiki if you want it to select created dir
-map a :push %~/.scripts/mk.sh<space>
-
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
-cmd trash %set -f; mv $fx ~/.trash
+cmd trash %set -f; mv --backup=t $fx ~/.trash
 
 cmd paste &{{
     set -- $(cat ~/.local/share/lf/files)
@@ -60,7 +47,7 @@ cmd paste &{{
                 lf -remote "send $id echo $line"
             done
             ;;
-        move) mv -n -- "$@" .;;
+        move) mv -i -- "$@" .;;
     esac
     rm ~/.local/share/lf/files
     lf -remote "send clear"
@@ -77,25 +64,19 @@ cmd bulkrename ${{
     lf -remote "send $id unselect"
 }}
 
-map R bulkrename
-
 cmd follow_link %{{
   lf -remote "send ${id} select '$(readlink $f)'"
 }}
 
-map gl follow_link
-
-map . :read; cmd-history-prev; cmd-enter
 # extract the current file with the right command
-# (xkcd link: https://xkcd.com/1168/)
 cmd extract ${{
     set -f
     case $f in
         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
         *.tar.gz|*.tgz) tar xzvf $f;;
         *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.rar) unrar x $f;;
+        *.zip) unzip -d "${f%.*}" "$f";;
+        *.rar) unrar x "$f" "${f%.*}/";;
         *.7z) 7z x $f;;
     esac
 }}
@@ -117,3 +98,26 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+cmd on-select &{{
+	if [ "$lf_user_find" = true ]; then
+		lf -remote "send $id set user_find false"
+		lf -remote "send $id open"
+	fi
+}}
+# MAPPINGS
+
+# use enter for shell commands
+map <enter> shell
+
+# map x to cut
+map x cut
+map <esc> : clear; unselect
+# show the result of execution of previous commands
+map ` !true
+map a :push %~/.scripts/mk.sh<space>
+map zz extract
+map gl follow_link
+map R bulkrename
+map d trash
+map f :find; set user_find true
