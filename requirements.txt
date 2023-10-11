@@ -10,6 +10,7 @@ xorg-xbacklight
 xorg-xset
 pamac # arch package manager
 xterm
+perl-file-mimeinfo
 
 # Drivers
 xf86-input-synaptics
