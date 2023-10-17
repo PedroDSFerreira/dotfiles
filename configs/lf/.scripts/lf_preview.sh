@@ -9,25 +9,9 @@ case "$MIME" in
 *application/pdf*)
 	pdftotext "$1" -
 	;;
-# .7z
-*application/x-7z-compressed*)
-	7z l "$1"
-	;;
-# .tar .tar.Z
-*application/x-tar*)
-	tar -tvf "$1"
-	;;
-# .tar.*
-*application/x-compressed-tar* | *application/x-*-compressed-tar*)
-	tar -tvf "$1"
-	;;
-# .rar
-*application/vnd.rar*)
-	unrar l "$1"
-	;;
-# .zip
-*application/zip*)
-	unzip -l "$1"
+# compressed files
+*application/*compressed* | *application/*zip* | *application/*rar* | *application/*tar*)
+	lsar "$1"
 	;;
 # images
 *image/*)
