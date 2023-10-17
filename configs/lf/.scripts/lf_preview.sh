@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# WARNING: script requires mime-types, bat, timg, pdftotext, 7z, unrar, unzip and tar pkgs
+# WARNING: script requires mime-types, bat, timg, pdftotext and lsar
 
 MIME=$(mimetype --all --brief "$1")
 

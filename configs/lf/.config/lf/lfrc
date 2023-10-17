@@ -131,10 +131,8 @@ cmd fzf_jump ${{
     fi
 }}
 
-cmd mk ${{
-        printf "Enter name: "
-        read name
-        sh -c "~/.scripts/mk.sh $name"
+cmd find_folder ${{
+        lf -remote "send $id cd \"$(find . -type d -print | fzf)\""
 }}
 
 # MAPPINGS
@@ -155,7 +153,7 @@ map x cut
 map <esc> : clear; unselect
 # show the result of execution of previous commands
 map "'" !true
-map a mk
+map a :push %~/.scripts/mk.sh<space>
 map zz file_extract
 map gl follow_link
 # go to cmd directory
@@ -168,4 +166,6 @@ map dd trash
 map dD $rm -rf $fx
 map P file_preview
 map <c-f> :fzf_jump
+map ff find_folder
+
 map S :fzf_jump
