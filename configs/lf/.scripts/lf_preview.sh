@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# WARNING: script requires mime-types, bat, timg, pdftotext, 7z, unrar, unzip and tar pkgs
+
 MIME=$(mimetype --all --brief "$1")
 
 case "$MIME" in
