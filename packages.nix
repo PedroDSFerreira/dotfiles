@@ -4,6 +4,7 @@
     inherit (pkgs)
         bat
         btop
+        calc
         delta
         eza
         fd
