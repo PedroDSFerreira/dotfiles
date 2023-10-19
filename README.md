@@ -1,6 +1,7 @@
 # Linux Config Files/ Installed Packages
 
 ## Contains configs for:
+
 - [Alacritty](https://github.com/alacritty/alacritty)
 - [AwesomeWM](https://awesomewm.org/)
 - [Nvim](https://neovim.io/)
@@ -15,32 +16,59 @@
 - git + [lazygit](https://github.com/jesseduffield/lazygit)
 
 ---
-## Packages
+
+## Nix Packages (CLI tools only)
+
+### Requirements
+
+- Git
 
 ### Install:
-``` bash
+
+```sh
+./install.sh
+```
+
+### Compatibility:
+
+Not yet tested.
+Should work on most Linux distros and MacOS.
+
+<!-- Tested with: -->
+
+<!-- -  -->
+
+---
+
+## Arch Packages
+
+### Install:
+
+```bash
 pacman -S - < requirements.txt
 ```
 
 ### Export:
-``` bash
+
+```bash
 pacman -Qqen > requirements.txt
 ```
 
----
 ## Symlinks
- -  to create/remove symlinks, cd into `configs/`
+
+- to create/remove symlinks, cd into `configs/`
 
 ### Create:
- ```bash
- stow -t ~/ *
- ```
+
+```bash
+stow -t ~/ *
+```
 
 ### Remove:
 
 ```bash
  stow -D -t ~/ *
- ```
+```
 
 ---
 

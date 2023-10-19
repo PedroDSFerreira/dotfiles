@@ -61,7 +61,6 @@ ttf-jetbrains-mono-nerd
 # Man pages
 man-pages
 tealdeer
-
 # Terminal commands
 yay # aur package manager
 wget
@@ -83,6 +82,7 @@ glow
 bat
 btop
 curl
+
 rofi
     # Dependencies
     python-dbus

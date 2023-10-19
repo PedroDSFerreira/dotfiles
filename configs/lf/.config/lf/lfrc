@@ -1,15 +1,11 @@
 # SETTINGS
 
-# interpreter for shell commands
-set number true
-set relativenumber true
-set drawbox true
+# set drawbox true
 set shell sh
 set hidden true
 set shellopts '-eu'
 set icons
-set preview false
-set ratios 1:5
+set ratios 1:3:4
 set previewer ~/.scripts/lf_preview.sh
 set ifs "\n"
 # leave some space at the top and the bottom of the screen
@@ -21,12 +17,6 @@ set incsearch true
 
 # COMMANDS
 
-cmd open $rifle $fx
-
-# define a custom 'open' command
-# This command is called when current file is not a directory. You may want to
-# use either file extensions and/or mime types here. Below uses an editor for
-# text files and a file opener for the rest.
 cmd open &{{
     case $(file --mime-type -Lb $f) in
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
@@ -36,6 +26,7 @@ cmd open &{{
 
 # move current file or selected files to trash folder
 # WARNING: (create ~/.trash symlink to your trash folder)
+# TODO: use trash-cli
 cmd trash %set -f; mv --backup=t $fx ~/.trash
 
 cmd paste &{{
@@ -72,7 +63,7 @@ cmd follow_link %{{
 }}
 
 # extract the current file with unarchiver
-cmd file_extract ${{
+cmd extract ${{
     set -f
     unar $f
 }}
@@ -132,7 +123,10 @@ cmd fzf_jump ${{
 }}
 
 cmd find_folder ${{
-        lf -remote "send $id cd \"$(find . -type d -print | fzf)\""
+        # Find all folders except .git/
+        # If command doesn't work, use:
+        # find ${PWD} --type d -E '*/\.git/*' -H
+        lf -remote "send $id cd \"$(find ${PWD} -type d -not -path '*/\.git/*' | fzf)\""
 }}
 
 # MAPPINGS
@@ -143,6 +137,11 @@ map f
 map F
 map w
 map '"'
+map H
+map L
+
+map J low
+map K high
 
 # Open directory in terminal
 map o $$SHELL
@@ -154,18 +153,21 @@ map <esc> : clear; unselect
 # show the result of execution of previous commands
 map "'" !true
 map a :push %~/.scripts/mk.sh<space>
-map zz file_extract
+map zz extract
+
 map gl follow_link
 # go to cmd directory
 map gb goto_oldpwd
-map gw cd ~/Desktop/Workspace/
-map gd cd ~/Downloads/
+map gw cd ~/desktop/workspace/
+map gd cd ~/downloads/
+map gc cd ~/.dotfiles/configs/
 
 map R bulkrename
 map dd trash
 map dD $rm -rf $fx
 map P file_preview
-map <c-f> :fzf_jump
+
+map fa :fzf_jump
 map ff find_folder
 
 map S :fzf_jump
