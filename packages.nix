@@ -14,6 +14,7 @@
         lf
         man-db
         man-pages
+        neovim
         ripgrep
         rsync
         starship
@@ -22,5 +23,6 @@
         timg
         tmux
         unar
+        zsh
         ;
 }

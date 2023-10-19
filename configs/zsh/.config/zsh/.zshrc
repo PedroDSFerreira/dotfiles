@@ -41,6 +41,7 @@ alias configs="cd ~/.dotfiles/configs/"
 alias workspace="cd ~/Desktop/Workspace"
 alias ..="cd .."
 alias ~="cd ~"
+alias _="cd - > /dev/null"
 alias cl="clear"
 alias cat="bat"
 alias find="fd"
@@ -62,12 +63,12 @@ brightness() {
 }
 
 # Starship
-eval source <(/usr/bin/starship init zsh --print-full-init)
+eval "$(starship init zsh)"
 
 # Startup ascii script (shows ascii art)
 # sh ~/.scripts/ascii.sh
 
 # rust config
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 # ruby config
-eval "$(rbenv init - zsh)"
+# eval "$(rbenv init - zsh)"

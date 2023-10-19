@@ -21,7 +21,8 @@
 
 ### Requirements
 
-- Git (to clone this repo)
+- Git
+- [Nix](https://nixos.org/download.html)
 
 ### Install:
 
