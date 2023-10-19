@@ -21,12 +21,12 @@
 
 ### Requirements
 
-- Git
+- Git (to clone this repo)
 
 ### Install:
 
 ```sh
-./install.sh
+git clone https://github.com/PedroDSFerreira/dotfiles.git && ./dotfiles/install.sh
 ```
 
 ### Compatibility:

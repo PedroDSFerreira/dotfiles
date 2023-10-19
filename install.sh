@@ -1,5 +1,7 @@
+#!/usr/bin/env bash
+
 # Install nixpkgs
-sh <(curl -L https://nixos.org/nix/install) --daemon
+<(curl -L https://nixos.org/nix/install) --daemon
 
 # Install packages
 nix-env -f packages.nix -i
