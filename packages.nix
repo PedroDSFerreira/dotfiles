@@ -16,6 +16,7 @@
         man-db
         man-pages
         neovim
+        nodejs_20
         ripgrep
         rsync
         starship
