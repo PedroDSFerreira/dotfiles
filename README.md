@@ -22,6 +22,7 @@
 ### Requirements
 
 - Git
+- Curl
 - [Nix](https://nixos.org/download.html)
 
 ### Install:
@@ -34,12 +35,10 @@ git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
 
 ### Compatibility:
 
-Not yet tested.
-Should work on most Linux distros and MacOS.
+Tested with:
 
-<!-- Tested with: -->
-
-<!-- -  -->
+- Debian 12
+- Arch Linux
 
 ---
 
