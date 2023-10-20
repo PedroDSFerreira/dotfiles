@@ -5,3 +5,4 @@ export GOPATH="$HOME/go";
 export GOROOT="$HOME/.go";
 export PATH="$PATH:/home/pedro/.local/share/gem/ruby/2.0.0/bin:$GOPATH/bin"
 export PAGER="bat"
+export STARSHIP_LOG="error"
