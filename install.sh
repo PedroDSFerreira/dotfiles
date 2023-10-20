@@ -18,7 +18,9 @@ cd configs && stow -t $HOME \
 fc-cache -f -v
 
 # Choose default shell
-chsh -s $(which zsh)
+zsh_path=$(which zsh)
+sudo sh -c "echo $zsh_path >> /etc/shells"
+chsh -s $zsh_path
 
 # Install zsh plugins
 source $HOME/.zshenv
