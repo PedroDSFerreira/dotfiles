@@ -13,7 +13,7 @@ from gi.repository import GLib
 DBusGMainLoop(set_as_default=True)
 
 
-FORMAT_STRING = '{icon} {artist} - {title}'
+FORMAT_STRING = ' {icon}  {artist} - {title}'
 FORMAT_REGEX = re.compile(r'(\{:(?P<tag>.*?)(:(?P<format>[wt])(?P<formatlen>\d+))?:(?P<text>.*?):\})', re.I)
 FORMAT_TAG_REGEX = re.compile(r'(?P<format>[wt])(?P<formatlen>\d+)')
 SAFE_TAG_REGEX = re.compile(r'[{}]')
