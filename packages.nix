@@ -13,6 +13,7 @@
         jq
         lazygit
         lf
+        libgccjit
         man-db
         man-pages
         neovim
