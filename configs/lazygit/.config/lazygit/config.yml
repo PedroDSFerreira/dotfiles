@@ -1,11 +1,11 @@
 gui:
   theme:
     activeBorderColor:
-      - '#f5e0dc'
+      - "#f5e0dc"
       - bold
   mouseEvents: false
-  nerdFontsVersion: "2"
-  border: 'rounded'
+  nerdFontsVersion: "3"
+  border: "rounded"
   showRandomTip: false
   showBottomLine: false
   showCommandLog: false
