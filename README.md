@@ -27,7 +27,9 @@
 ### Install:
 
 ```sh
-git clone https://github.com/PedroDSFerreira/dotfiles.git && ./dotfiles/install.sh
+git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
+    cd ~/.dotfiles && \
+    ./install.sh
 ```
 
 ### Compatibility:
