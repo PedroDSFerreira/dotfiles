@@ -158,8 +158,8 @@ map zz extract
 map gl follow_link
 # go to cmd directory
 map gb goto_oldpwd
-map gw cd ~/desktop/workspace/
-map gd cd ~/downloads/
+map gw cd ~/Desktop/Workspace/
+map gd cd ~/Downloads/
 map gc cd ~/.dotfiles/configs/
 
 map R bulkrename
