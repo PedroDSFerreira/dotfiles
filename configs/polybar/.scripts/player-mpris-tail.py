@@ -662,7 +662,7 @@ parser.add_argument(
 parser.add_argument("--truncate-text", default="…")
 parser.add_argument("--icon-playing", default="")
 parser.add_argument("--icon-paused", default="")
-parser.add_argument("--icon-stopped", default="")
+parser.add_argument("--icon-stopped", default=" ")
 parser.add_argument("--icon-none", default="")
 args = parser.parse_args()
 
