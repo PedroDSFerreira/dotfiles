@@ -152,7 +152,7 @@ map x cut
 map <esc> : clear; unselect
 # show the result of execution of previous commands
 map "'" !true
-map a :push %~/.scripts/mk.sh<space>
+map a :push %mk<space>
 map zz extract
 
 map gl follow_link
