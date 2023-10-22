@@ -55,11 +55,11 @@ alias pac="sudo pacman"
 alias stats="btop"
 
 h() {
-	history $1 | fzf --layout reverse
+        history 0 | awk '{$1=""}1' | fzf-tmux -p --layout reverse --tac | zsh
 }
 
 brightness() {
-  sh $SCRIPTS_DIR/brightness.sh $1
+        sudo xbacklight -set $1
 }
 
 # Starship
