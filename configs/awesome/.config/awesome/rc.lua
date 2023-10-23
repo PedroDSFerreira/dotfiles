@@ -408,8 +408,11 @@ awful.rules.rules = {
 
 	-- Task Manager
 	{
-		rule = {
-			instance = "task manager",
+		rule_any = {
+			instance = {
+				"task manager",
+				"lf",
+			},
 		},
 		properties = {
 			floating = true,
