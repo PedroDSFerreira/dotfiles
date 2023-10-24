@@ -418,10 +418,9 @@ awful.rules.rules = {
 			floating = true,
 			ontop = true,
 			sticky = true,
-			width = 1250,
-			height = 850,
-			placement = awful.placement.centered,
-			size_hints_honor = false,
+			-- placement = awful.placement.centered,
+			width = awful.screen.focused().workarea.width * 0.6,
+			height = awful.screen.focused().workarea.height * 0.6,
 		},
 	},
 	-- Floating clients.
