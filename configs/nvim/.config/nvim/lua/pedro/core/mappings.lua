@@ -19,14 +19,16 @@ keymap.set("n", "<A-l>", ">>", { desc = "Indent right" })
 -- page jump keeping cursor position
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
--- searching words keeping cursor position
-keymap.set("n", "n", "nzzv")
-keymap.set("n", "N", "Nzzv")
+
+-- -- searching words keeping cursor position
+-- keymap.set("n", "n", "nzzv")
+-- keymap.set("n", "N", "Nzzv")
 
 -- clipboard
 -- paste from clipboard
 keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from clipboard" })
 keymap.set("n", "<leader>p", '"+P', { desc = "Paste from clipboard" })
+keymap.set({ "n" }, "<leader>P", '"+gP', { desc = "Paste from clipboard" })
 -- yank to clipboard
 keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
 keymap.set("n", "<leader>y", '"+Y', { desc = "Yank to clipboard" })
@@ -37,3 +39,7 @@ keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete keeping clipboard"
 keymap.set("n", "<leader>l", ":bnext<CR>", { desc = "Next buffer" })
 keymap.set("n", "<leader>h", ":bprevious<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Close buffer" })
+
+-- Add new lines in normal mode
+keymap.set("n", "<leader>o", "o<Esc>", { desc = "Add new line below" })
+keymap.set("n", "<leader>O", "O<Esc>", { desc = "Add new line above" })
