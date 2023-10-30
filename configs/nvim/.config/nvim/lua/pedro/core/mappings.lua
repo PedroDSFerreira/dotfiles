@@ -21,8 +21,8 @@ keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- -- searching words keeping cursor position
--- keymap.set("n", "n", "nzzv")
--- keymap.set("n", "N", "Nzzv")
+keymap.set("n", "n", "nzz")
+keymap.set("n", "N", "Nzz")
 
 -- clipboard
 -- paste from clipboard
