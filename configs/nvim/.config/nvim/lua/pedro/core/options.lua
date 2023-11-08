@@ -26,6 +26,12 @@ opt.incsearch = true
 opt.showtabline = 0
 opt.termguicolors = true
 
+-- folding
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
+opt.foldlevel = 99
+
 -- remove trailing whitespace on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = { "*" },
