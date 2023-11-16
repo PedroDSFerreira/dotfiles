@@ -160,6 +160,7 @@ map gl follow_link
 map gb goto_oldpwd
 map gw cd ~/Desktop/Workspace/
 map gd cd ~/Downloads/
+map gD cd ~/Desktop/
 map gc cd ~/.dotfiles/configs/
 
 map R bulkrename
