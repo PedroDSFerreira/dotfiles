@@ -63,6 +63,7 @@ man-pages
 tealdeer
 # Terminal commands
 yay # aur package manager
+downgrade
 wget
 xclip # clipboard
 zip
