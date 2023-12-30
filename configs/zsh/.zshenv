@@ -12,3 +12,5 @@ export PAGER="bat"
 export MANPAGER="nvim +Man!"
 export STARSHIP_LOG="error"
 export BAT_THEME="Monokai Extended Origin"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
+export FZF_COMPLETION_TRIGGER='@'
