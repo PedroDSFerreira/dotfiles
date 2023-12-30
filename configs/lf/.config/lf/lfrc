@@ -110,7 +110,7 @@ cmd on-select &{{
 }}
 
 cmd fzf_jump ${{
-    res="$(find . | fzf --reverse --header='Jump to location')"
+    res="$(find . | fzf-tmux -p --reverse --header='Jump to location')"
     if [ -n "$res" ]; then
         if [ -d "$res" ]; then
             cmd="cd"
@@ -126,7 +126,7 @@ cmd find_folder ${{
         # Find all folders except .git/
         # If command doesn't work, use:
         # find ${PWD} --type d -E '*/\.git/*' -H
-        lf -remote "send $id cd \"$(find ${PWD} -type d -not -path '*/\.git/*' | fzf)\""
+        lf -remote "send $id cd \"$(find ${PWD} -type d -not -path '*/\.git/*' | fzf-tmux -p --reverse)\""
 }}
 
 # MAPPINGS
