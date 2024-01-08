@@ -1,3 +1,4 @@
+![Screenshot](screenshot.png)
 # Linux Config Files/ Installed Packages
 
 ## Contains configs for:
@@ -71,9 +72,3 @@ stow -t ~/ *
 ```bash
  stow -D -t ~/ *
 ```
-
----
-
-## Screenshot
-
-![Screenshot](screenshot.png)
