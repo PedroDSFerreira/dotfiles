@@ -1,0 +1,7 @@
+gui:
+  theme:
+    activeBorderColor:
+      - "#f5e0dc"
+      - bold
+  containerStatusHealthStyle: "icon"
+  # border: "rounded"
