@@ -6,6 +6,7 @@
         btop
         calc
         delta
+        du-dust
         eza
         fd
         fontconfig
