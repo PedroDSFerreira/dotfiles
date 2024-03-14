@@ -79,7 +79,7 @@ cmd goto_oldpwd &{{
     lf -remote "send $id cd ${OLDPWD}"
 }}
 
-cmd file_preview %{{
+cmd toggle_preview %{{
     if [ "$lf_preview" = "true" ]; then
         lf -remote "send $id :set preview false; set ratios 1:5"
     else
@@ -111,14 +111,11 @@ cmd find_folder ${{
         lf -remote "send $id cd \"$(find ${PWD} -type d -not -path '*/\.git/*' | fzf-tmux -p --reverse)\""
 }}
 
-# cmd dust ${{
-#   # draw on top of the screen
-#   NOT WORKING
-#   tput cup 0 0 && dust --reverse -d 1 | less -R
-# }}
+cmd dust ${{
+  lf -remote "send $id !clear -x && dust --reverse -d 1"
+}}
 
-# MAPPINGS
-
+# REMOVE DEFAULT MAPPINGS
 map d
 map t
 map f
@@ -127,36 +124,34 @@ map w
 map '"'
 map H
 map L
+map <space>
 
-map J low
-map K high
-
-# Open directory in terminal
-map o $$SHELL
-# use enter for shell commands
-map <enter> shell
-# map x to cut
-map x cut
-map <esc> : clear; unselect
-# show the result of execution of previous commands
+# MAPPINGS
 map "'" !true
+map o $$SHELL
+map J top
+map K bottom
+map x cut
+map <enter> :toggle; down
+map <esc> : clear; unselect
+
 map a :push %mk<space>
+map R bulkrename
+map dd trash
+map dD $rm -rf $fx
+map P toggle_preview
+
+# COMPRESSION/EXTRACTION
 map zz extract
 
+# GO TO
 map gl follow_link
-# go to cmd directory
 map gb goto_oldpwd
 map gw cd ~/Desktop/Workspace/
 map gd cd ~/Downloads/
 map gD cd ~/Desktop/
 map gc cd ~/.dotfiles/configs/
 
-map R bulkrename
-map dd trash
-map dD $rm -rf $fx
-map P file_preview
-
-map fa :fzf_jump
+# SEARCH
+map fa fzf_jump
 map ff find_folder
-
-map S :fzf_jump
