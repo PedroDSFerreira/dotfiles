@@ -4,4 +4,4 @@ gui:
       - "#f5e0dc"
       - bold
   containerStatusHealthStyle: "icon"
-  # border: "rounded"
+  border: "rounded"
