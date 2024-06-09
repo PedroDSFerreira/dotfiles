@@ -12,6 +12,9 @@
     minus-style=syntax bold "#4f0002"
     navigate = true    # use n and N to move between diff sections
 
+[pull]
+    rebase = true
+
 [merge]
     conflictstyle = diff3
 
