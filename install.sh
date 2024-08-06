@@ -6,16 +6,12 @@ nix-env -f packages.nix -i
 # Create symlinks
 cd configs && stow -t $HOME \
 	git \
-	lazygit \
+	lazy \
 	lf \
 	nvim \
 	starship \
-	tmux \
-	zsh \
-	fonts
+	tmux
 
-# Apply fonts
-fc-cache -f -v
 
 # Choose default shell
 zsh_path=$(which zsh)

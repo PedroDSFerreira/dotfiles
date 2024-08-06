@@ -27,7 +27,7 @@ cmd open &{{
 # move current file or selected files to trash folder
 # WARNING: (create ~/.trash symlink to your trash folder)
 # TODO: use trash-cli
-cmd trash %set -f; mv --backup=t $fx ~/.trash
+cmd trash %set -f; mv --backup=t $fx ~/.Trash
 
 cmd paste &{{
     set -- $(cat ~/.local/share/lf/files)
@@ -129,8 +129,8 @@ map <space>
 # MAPPINGS
 map "'" !true
 map o $$SHELL
-map J top
-map K bottom
+map K top
+map J bottom
 map x cut
 map <enter> :toggle; down
 map <esc> : clear; unselect
@@ -147,7 +147,7 @@ map zz extract
 # GO TO
 map gl follow_link
 map gb goto_oldpwd
-map gw cd ~/Desktop/Workspace/
+map gw cd ~/Workspace/
 map gd cd ~/Downloads/
 map gD cd ~/Desktop/
 map gc cd ~/.dotfiles/configs/

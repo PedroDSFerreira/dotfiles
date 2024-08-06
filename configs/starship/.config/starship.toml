@@ -20,31 +20,38 @@ $time\
 $status\
 $character"""
 
+[directory]
+style = "blue"
+truncate_to_repo = false
+
 [character]      # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "symbol" segment is being set to "➜"
+success_symbol = "[❯](bold purple)"     # The "symbol" segment is being set to "➜"
 error_symbol = "[✗](bold red)"
 
 [jobs]
 threshold = 1
 format = "[$number ]($style)"
 
-[directory]
-truncate_to_repo = false
-
 [battery]
-full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch)]($style) "
+style = "white"
+symbol = " "
 
 [git_status]
 format = "([$conflicted$stashed$untracked$modified$deleted$staged$ahead_behind ]($style))"
+style = "#6C6D6D"
 ahead = " ⇡ ${count}"
 diverged = " ⇕⇡ ${ahead_count} ⇣${behind_count}"
 behind = " ⇣ ${count}"
-untracked = " [ ${count}](white)"
-modified = " [ ${count}](white)"
-deleted = " [ ${count}](white)"
-staged = " [🔒${count}](green)"
+untracked = "  ${count}"
+modified = "  ${count}"
+deleted = "  ${count}"
+staged = " 🔒${count}"
 
 
 [cmd_duration]
