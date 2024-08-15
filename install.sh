@@ -10,8 +10,8 @@ cd configs && stow -t $HOME \
 	lf \
 	nvim \
 	starship \
-	tmux
-
+	tmux \
+    others
 
 # Choose default shell
 zsh_path=$(which zsh)
