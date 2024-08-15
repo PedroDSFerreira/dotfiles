@@ -12,6 +12,7 @@
         ffmpegthumbnailer
         fontconfig
         fzf
+        glow
         httpie
         jq
         lazydocker
@@ -20,10 +21,11 @@
         neovim
         nodejs_20
         ollama
-        poppler
+        poppler_utils
         ripgrep
         rsync
         sd
+        sshs
         starship
         stow
         tealdeer
@@ -31,7 +33,7 @@
         tmux
         ueberzugpp
         unar
-        yazi
+        # yazi (outdated)
         zsh
         ;
 }
