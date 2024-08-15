@@ -14,3 +14,9 @@ git:
   paging:
     colorArg: always
     pager: delta --paging=never
+keybinding:
+  universal:
+    scrollLeft: <disabled>
+    scrollRight: <disabled>
+    nextTab: L
+    prevTab: H
