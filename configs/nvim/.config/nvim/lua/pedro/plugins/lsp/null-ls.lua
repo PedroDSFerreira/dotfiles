@@ -31,12 +31,12 @@ return {
 				formatting.black,
 				formatting.autoflake,
 				-- Ruby
-				diagnostics.erb_lint,
-				formatting.erb_format,
+				-- diagnostics.erb_lint,
+				-- formatting.erb_format,
 				-- diagnostics.rubocop,
-				formatting.rubocop,
+				-- formatting.rubocop,
 				-- Rust
-				formatting.rustfmt,
+				-- formatting.rustfmt,
 				-- C/C++/Java
 				formatting.clang_format,
 				-- JS/TS/HTML/CSS/MD/JSON

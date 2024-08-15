@@ -1,32 +1,46 @@
 return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-
-    local wk = require("which-key")
-
-    wk.register({
-      ["<leader>f"] = { name = "+find" },
-      ["<leader>e"] = { name = "+explorer" },
-      ["<leader>t"] = { name = "+toggle" },
-      ["<leader>g"] = { name = "+git" },
-      ["<leader>c"] = { name = "+code" },
-    })
-  end,
-  opts = {
-    plugins = {
-      marks = false,
-      registers = false,
+    "folke/which-key.nvim",
+    dependencies = {
+        { "echasnovski/mini.nvim", version = false },
     },
-    window = {
-      border = "rounded",       -- none, single, double, shadow
-      position = "bottom",      -- bottom, top
-      margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
-      padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
-      winblend = 0,             -- value between 0-100 0 for fully opaque and 100 for fully transparent
-      zindex = 1000,            -- positive value to position WhichKey above other floating windows.
+    event = "VeryLazy",
+    opts = {
+        -- General options
+        plugins = {
+            marks = false,
+            registers = false,
+        },
+        window = {
+            border = "rounded",
+            position = "bottom",
+            margin = { 1, 0, 1, 0 },
+            padding = { 1, 2, 1, 2 },
+            winblend = 0,
+            zindex = 1000,
+        },
+        -- Icons configuration if needed
+        icons = {
+            -- Icon settings here
+        },
+        -- Triggers configuration
+        triggers = {
+            { "<auto>",   mode = "nixsotc" },
+            { "<leader>", mode = { "n", "v" } },
+        },
+        defer = function(ctx)
+            -- Defer logic here
+        end,
     },
-  }
+    config = function()
+        local wk = require("which-key")
+
+        -- Assuming a new method for registering keys, adapt as necessary
+        wk.setup({
+            ["<leader>f"] = { name = "+find", icon = "" }, -- Using a file search icon
+            ["<leader>e"] = { name = "+explorer", icon = "" }, -- Using a folder icon
+            ["<leader>t"] = { name = "+toggle", icon = "" }, -- Using a toggle icon
+            ["<leader>g"] = { name = "+git", icon = "" }, -- Using a git icon
+            ["<leader>c"] = { name = "+code", icon = "" }, -- Using a code icon
+        })
+    end,
 }
