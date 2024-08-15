@@ -1,8 +1,8 @@
 # focus window
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+# alt - h : yabai -m window --focus west
+# alt - j : yabai -m window --focus south
+# alt - k : yabai -m window --focus north
+# alt - l : yabai -m window --focus east
 
 # swap managed window
 shift + alt - h : yabai -m window --swap west
@@ -48,6 +48,8 @@ shift + alt - n : yabai -m space --create && \
                    yabai -m space --focus "${index}"
 
 alt - tab : yabai -m window --focus next || yabai -m window --focus first
+alt + shift - tab : yabai -m window --focus prev || yabai -m window --focus last
+
 alt + ctrl - tab : yabai -m display --focus next || yabai -m display --focus first
 # fast focus desktop
 alt - escape : yabai -m space --focus recent
@@ -55,7 +57,6 @@ alt - escape : yabai -m space --focus recent
 # send window to monitor and follow focus
 alt - o : yabai -m window --display next || yabai -m window --display first;\
     yabai -m display --focus next || yabai -m display --focus first
-# shift + alt - p : yabai -m window --display previous; yabai -m display --focus previous
-#
-# Restart yabai
-alt - r : yabai --restart-service
+
+# Restart yabai and skhd
+alt - r : yabai --restart-service & skhd --restart-service
