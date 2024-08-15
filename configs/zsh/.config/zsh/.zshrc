@@ -70,7 +70,6 @@ alias ~="cd ~"
 alias _="cd - > /dev/null"
 alias cl="clear -x"
 alias cat="bat -p"
-alias l="lf"
 alias ll="eza -a -l --icons -s type"
 alias la="eza -a --icons -s type"
 alias ls="eza --icons -s type"
@@ -82,7 +81,11 @@ function h() {
     history 0 | awk '{$1=""}1' | fzf-tmux -p --layout reverse --tac | zsh
 }
 
-function yy() {
+function brightness() {
+    sudo xbacklight -set $1
+}
+
+function l() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -102,3 +105,6 @@ eval "$(fzf --zsh)"
 # ruby config
 # eval "$(rbenv init - zsh)"
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
