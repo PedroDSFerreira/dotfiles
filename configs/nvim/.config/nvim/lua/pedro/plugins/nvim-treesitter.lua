@@ -58,7 +58,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		keymap.set("n", "<C-p>", "<cmd> Telescope find_files <CR>", { desc = "Files" })
-		keymap.set("n", "<leader>fl", "<cmd> Telescope find_files <CR>", { desc = "Files" })
+		keymap.set("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Files" })
 		keymap.set("n", "<leader>fb", "<cmd> Telescope buffers <CR>", { desc = "Buffers" })
 		keymap.set(
 			"n",
@@ -68,7 +68,7 @@ return {
 		)
 		keymap.set("n", "<leader>fg", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
 		keymap.set("n", "<leader>fr", "<cmd> Telescope oldfiles <CR>", { desc = "Recent files" })
-		keymap.set("n", "<leader>ff", "<cmd> Telescope current_buffer_fuzzy_find <CR>", { desc = "Current buffer" })
+		keymap.set("n", "<leader>fl", "<cmd> Telescope current_buffer_fuzzy_find <CR>", { desc = "Current buffer" })
 		keymap.set("n", "<leader>gc", "<cmd> Telescope git_commits <CR>", { desc = "Commits" })
 		keymap.set("n", "<leader>gb", "<cmd> Telescope git_branches <CR>", { desc = "Branches" })
 		keymap.set("n", "<leader>gs", "<cmd> Telescope git_status <CR>", { desc = "Git status" })
