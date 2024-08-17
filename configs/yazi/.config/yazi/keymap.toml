@@ -1,11 +1,11 @@
 [manager]
 
 keymap = [
-	{ on = ["<Esc>"], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
-	{ on = ["<C-[>"], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
-	{ on = ["o"],     run = "quit",               desc = "Exit the process" },
-	{ on = ["q"],     run = "quit --no-cwd-file", desc = "Exit the process without writing cwd-file" },
-	{ on = ["<C-z>"], run = "suspend",            desc = "Suspend the process" },
+	{ on = ["<Esc>"], run = [ "escape", "unyank" ], desc = "Exit visual mode, clear selected, or cancel search" },
+	{ on = ["<C-[>"], run = [ "escape", "unyank" ], desc = "Exit visual mode, clear selected, or cancel search" },
+	{ on = ["o"],     run = "quit",                 desc = "Exit the process" },
+	{ on = ["q"],     run = "quit --no-cwd-file",   desc = "Exit the process without writing cwd-file" },
+	{ on = ["<C-z>"], run = "suspend",              desc = "Suspend the process" },
 
 	# Hopping
 	{ on = ["k"], run = "arrow -1", desc = "Move cursor up" },
