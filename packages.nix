@@ -15,6 +15,7 @@
         glow
         httpie
         jq
+        k9s
         lazydocker
         lazygit
         lf
@@ -31,7 +32,6 @@
         tealdeer
         timg
         tmux
-        ueberzugpp
         unar
         # yazi (outdated)
         zsh
