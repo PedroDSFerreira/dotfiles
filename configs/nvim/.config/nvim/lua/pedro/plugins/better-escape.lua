@@ -1,9 +1,6 @@
 return {
-	"max397574/better-escape.nvim",
-	event = "InsertEnter",
-	config = function()
-		require("better_escape").setup({
-			mapping = { "jk", "jj", "JK", "JJ" },
-		})
-	end,
+  "max397574/better-escape.nvim",
+  config = function()
+    require("better_escape").setup()
+  end,
 }
