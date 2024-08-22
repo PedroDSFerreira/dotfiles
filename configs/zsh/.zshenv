@@ -1,6 +1,6 @@
 export BROWSER="brave"
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="wezterm"
 export SHELL="/bin/zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 export SCRIPTS_DIR="$HOME/.scripts"
