@@ -39,6 +39,7 @@ function config_modules.set_keybindings(config)
     {key="c", mods="CTRL", action=act.SendString("\x03")}, -- Reverse search
     {key="r", mods="CTRL", action=act.SendString("\x12")}, -- SIGINT signal
     {key="d", mods="CTRL", action=act.SendString("\x04")}, -- Send EOF signal
+    {key="v", mods="CTRL", action=act.SendString("\x16")},
     {key="+", mods="CTRL", action=act.IncreaseFontSize},
     {key="-", mods="CTRL", action=act.DecreaseFontSize},
     {key="t", mods="CMD", action=act.SpawnWindow},         -- Command + T: New Window
