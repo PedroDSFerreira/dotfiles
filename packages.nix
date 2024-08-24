@@ -26,10 +26,12 @@
         poppler_utils
         ripgrep
         sd
+        speedtest-cli
         sshs
         starship
         stow
         tealdeer
+        # thokr
         tmux
         # yazi (outdated)
         ;
