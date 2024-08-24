@@ -25,16 +25,12 @@
         ouch
         poppler_utils
         ripgrep
-        rsync
         sd
         sshs
         starship
         stow
         tealdeer
-        timg
         tmux
-        unar
         # yazi (outdated)
-        zsh
         ;
 }
