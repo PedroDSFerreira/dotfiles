@@ -7,11 +7,19 @@ nix-env -f packages.nix -i
 cd configs && stow -t $HOME \
 	git \
 	lazy \
-	lf \
 	nvim \
 	starship \
 	tmux \
-    others
+    fonts \
+    others \
+    wezterm \
+    yazi \
+    zsh
+
+# Install zsh, if necessary
+if which zsh >/dev/null 2>&1; then
+    nix-env -iA nixpkgs.zsh
+fi
 
 # Choose default shell
 zsh_path=$(which zsh)
