@@ -22,6 +22,7 @@
         neovim
         nodejs_20
         ollama
+        ouch
         poppler_utils
         ripgrep
         rsync
