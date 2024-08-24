@@ -136,7 +136,7 @@ keymap = [
     { on   = [ "s" ], run = "plugin searchjump", desc = "searchjump mode" },
 
     # Max-preview
-    { on   = "z", run = "plugin --sync max-preview", desc = "Maximize the preview pane" },
+    { on   = "z", run = "plugin max-preview --sync", desc = "Maximize the preview pane" },
 
     { on   = [ "f","g" ], run  = "plugin fg", desc = "find file by content (fuzzy match)" },
 
@@ -144,6 +144,9 @@ keymap = [
 
     # Chmod
     { on   = [ "c", "h" ], run  = "plugin chmod", desc = "Chmod on selected files" },
+
+    # Compress files
+    { on = ["Z"], run = "plugin ouch --args=zip", desc = "Compress with ouch" }
 ]
 
 [tasks]
