@@ -3,18 +3,20 @@
 
 ## Contains configs for:
 
-- [Alacritty](https://github.com/alacritty/alacritty)
-- [AwesomeWM](https://awesomewm.org/)
-- [Nvim](https://neovim.io/)
-- [Tmux](https://github.com/tmux/tmux/wiki)
-- [Picom](https://github.com/jonaburg/picom)
-- [Polybar](https://github.com/polybar/polybar) (to properly work, install [Rofi](https://github.com/davatorium/rofi) and [this collection](https://github.com/adi1090x/rofi))
-- [Starship](https://starship.rs/)
-- [Zsh](https://www.zsh.org/)
-- [Xorg](https://www.x.org/wiki/)
-- [feh](https://wiki.archlinux.org/title/feh)
-- [lf](https://github.com/gokcehan/lf)
-- git + [lazygit](https://github.com/jesseduffield/lazygit)
+- [alacritty](configs/alacritty)
+- [awesomeWM](configs/awesome)
+- [lazygit & lazydocker](configs/lazy)
+- [neovim](configs/nvim)
+- [picom](configs/picom)
+- [polybar](configs/polybar)
+- [skhd](configs/skhd)
+- [starship](configs/starship)
+- [tmux](configs/tmux)
+- [wezterm](configs/wezterm)
+- [xorg](configs/x)
+- [yabai](configs/yabai)
+- [yazi](configs/yazi)
+- [zsh](configs/zsh)
 
 ---
 
@@ -43,20 +45,6 @@ Tested with:
 - MacOS Sonoma 14.6.1
 
 ---
-
-## Arch Packages
-
-### Install:
-
-```bash
-pacman -S - < requirements.txt
-```
-
-### Export:
-
-```bash
-pacman -Qqen > requirements.txt
-```
 
 ## Symlinks
 
