@@ -1,4 +1,5 @@
 ![Screenshot](screenshot.png)
+
 # Linux Config Files/ Installed Packages
 
 ## Contains configs for:
@@ -20,6 +21,23 @@
 
 ---
 
+## MacOS setup
+
+### Requirements
+
+- Git
+- Curl
+- [Nix](https://nixos.org/download.html)
+- [Brew](https://brew.sh/)
+
+### Install:
+
+```sh
+git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
+    cd ~/.dotfiles && \
+    ./macos-setup.sh
+```
+
 ## Nix Packages (CLI tools only)
 
 ### Requirements
@@ -33,7 +51,7 @@
 ```sh
 git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
     cd ~/.dotfiles && \
-    ./install.sh
+    ./cli-setup.sh
 ```
 
 ### Compatibility:

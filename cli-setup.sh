@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Install packages
-nix-env -f packages.nix -i
+nix-env -f packages/cli.nix -i
 
 # Create symlinks
-cd configs && stow -t $HOME \
+stow -d configs -t $HOME \
 	git \
 	lazy \
 	nvim \
