@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> {}, unstablePkgs ? import <nixos-unstable> {} }:
 
 {
     inherit (pkgs)
@@ -12,16 +12,15 @@
         ffmpegthumbnailer
         fontconfig
         fzf
+        git
         glow
         httpie
         jq
         k9s
         lazydocker
         lazygit
-        lf
         neovim
         nodejs_20
-        ollama
         ouch
         poppler_utils
         ripgrep
@@ -31,8 +30,13 @@
         starship
         stow
         tealdeer
-        # thokr
         tmux
-        # yazi (outdated)
+        ;
+
+    # Packages from nixos-unstable
+    inherit (unstablePkgs)
+        ollama
+        thokr
+        yazi
         ;
 }

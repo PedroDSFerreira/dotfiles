@@ -194,7 +194,7 @@ globalkeys = gears.table.join(
     end, { description = "Kill window", group = "Alt" }),
     -------------
     awful.key({ super }, "Return", function()
-        awful.spawn("alacritty")
+        awful.spawn("wezterm")
     end, { description = "Open a terminal", group = "launcher" }),
     awful.key({ super, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
     awful.key({ super, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
@@ -438,20 +438,6 @@ awful.rules.rules = {
             floating = true,
             maximized = false,
 
-            placement = awful.placement.centered,
-        },
-    },
-
-    -- Matlab
-    {
-        rule = {
-            class = "MATLAB R2022a - academic use",
-            instance = "sun-awt-X11-XFramePeer",
-            name = "Figure",
-        },
-        properties = {
-            floating = true,
-            maximized = false,
             placement = awful.placement.centered,
         },
     },

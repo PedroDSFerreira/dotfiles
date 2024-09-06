@@ -61,7 +61,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a --icons -s type $realpath'
 # ------------------------------
 # ALIASES
 # ------------------------------
-alias vs="code"
 alias vim="nvim"
 alias configs="cd ~/.dotfiles/configs/"
 alias workspace="cd ~/Workspace"
@@ -75,7 +74,6 @@ alias la="eza -a --icons -s type"
 alias ls="eza --icons -s type"
 alias lt="eza -T --icons -L=1"
 alias ltt="eza -T --icons -L=2"
-alias stats="btop"
 
 function h() {
     history 0 | awk '{$1=""}1' | fzf-tmux -p --layout reverse --tac | zsh
@@ -85,7 +83,7 @@ function brightness() {
     sudo xbacklight -set $1
 }
 
-function l() {
+function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -106,5 +104,5 @@ eval "$(fzf --zsh)"
 # eval "$(rbenv init - zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
