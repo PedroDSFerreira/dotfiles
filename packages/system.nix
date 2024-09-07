@@ -5,25 +5,27 @@ let
 in
 {
     inherit (pkgs)
+        awesome
+        blueman
         brave
         brightnessctl
-        pamixer
-        wezterm
-        pavucontrol
-        awesome
-        playerctl
-        rofi
-        picom-pijulius
-        scrot
-        notepadqq
-        zsh
-        docker
         discord
-        spotify
-        polybar
+        docker
         feh
         networkmanagerapplet
-        blueman
+        notepadqq
+        pamixer
+        pavucontrol
+        picom-pijulius
+        playerctl
+        polybar
+        rofi
+        scrot
+        spotify
+        udiskie
+        usbutils
+        wezterm
+        zsh
         ;
 
     inherit (xorg)

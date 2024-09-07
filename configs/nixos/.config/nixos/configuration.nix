@@ -36,6 +36,7 @@ in
   services = {
     openssh.enable = true;
     libinput.enable = true;
+    udisks2.enable = true;
 
     displayManager = {
       defaultSession = "none+awesome";
@@ -57,6 +58,7 @@ in
       displayManager = {
         sessionCommands = ''
           picom &
+          udiskie --tray --notify &
           nm-applet &
           blueman-applet &
           sh $HOME/.scripts/background.sh &
