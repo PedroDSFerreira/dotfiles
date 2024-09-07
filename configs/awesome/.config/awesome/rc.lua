@@ -12,7 +12,6 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
-local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -91,14 +90,12 @@ awful.layout.layouts = {
 -- {{{ Menu
 
 -- Adds an empty wibar under my polybar so that the workarea changes
-awful.wibar({
-    position = "top",
-    height = 28,
-    opacity = 0,
-})
+-- awful.wibar({
+--     position = "top",
+--     height = 28,
+--     opacity = 0,
+-- })
 
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- Keyboard map indicator and switcher
@@ -443,8 +440,8 @@ awful.rules.rules = {
             ontop = true,
             sticky = true,
             -- placement = awful.placement.centered,
-            width = awful.screen.focused().workarea.width * 0.6,
-            height = awful.screen.focused().workarea.height * 0.6,
+            width = awful.screen.focused().workarea.width * 0.8,
+            height = awful.screen.focused().workarea.height * 0.8,
         },
     },
     -- Floating clients.
