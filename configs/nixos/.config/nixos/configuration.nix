@@ -55,8 +55,15 @@ in
       };
 
       displayManager = {
-        startx.enable = true;
+        sessionCommands = ''
+          picom &
+          nm-applet &
+          blueman-applet &
+          sh $HOME/.scripts/background.sh &
+        '';
+        lightdm.greeters.slick.enable = true;
       };
+
     };
 
     pipewire = {
@@ -76,30 +83,51 @@ in
   programs.zsh.enable = true;
   services.blueman.enable = true;
 
+  users.groups.pedro = {};
   users.users.pedro = {
     isNormalUser = true;
     description = "Pedro Ferreira";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+    group = "pedro";
   };
+
+  # # Declare systemd user services
+  # systemd.user.services = {
+  #   # NetworkManager applet
+  #   "nm-applet" = {
+  #     description = "NetworkManager Applet";
+  #     serviceConfig = {
+  #       ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet";
+  #       Restart = "always";
+  #     };
+  #     wantedBy = [ "default.target" ];
+  #   };
+  #
+  #   # Bluetooth applet
+  #   "blueman-applet" = {
+  #     description = "Bluetooth Manager Applet";
+  #     serviceConfig = {
+  #       ExecStart = "${pkgs.blueman}/bin/blueman-applet";
+  #       Restart = "always";
+  #     };
+  #     wantedBy = [ "default.target" ];
+  #   };
+  # };
+  services.dbus.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
-  # Include imported packages from apps.nix
   environment.systemPackages = with pkgs; [
     xclip
     wget
     gcc
   ] ++ (builtins.attrValues systemPackages) ++ (builtins.attrValues cliPackages);  # Adding the custom packages
 
-  environment.etc = {
-    "profile.local".text = ''
-      # /etc/profile.local: DO NOT EDIT -- this file has been generated automatically.
-      if [ -f "$HOME/.profile" ]; then
-        . "$HOME/.profile"
-      fi
-    '';
-  };
+  systemd.tmpfiles.rules = [
+    "d /home/pedro/Workspace 0755 pedro pedro -"
+    "d /home/pedro/Pictures/Screenshots 0755 pedro pedro -"
+  ];
   # services.kdeconnect = {
   #   enable = true;
   # };

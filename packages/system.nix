@@ -23,7 +23,8 @@ in
         polybar
         feh
         networkmanagerapplet
-        blueman;
+        blueman
+        ;
 
     inherit (xorg)
         xdm
@@ -32,5 +33,9 @@ in
         xkill
         xprop
         xrandr
-        xbacklight;
+        xbacklight
+        ;
+
+    inherit (unstablePkgs)
+        ;
 }

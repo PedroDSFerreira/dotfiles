@@ -33,7 +33,6 @@
         tmux
         ;
 
-    # Packages from nixos-unstable
     inherit (unstablePkgs)
         ollama
         thokr

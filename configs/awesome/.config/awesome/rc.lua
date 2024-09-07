@@ -54,7 +54,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-local terminal = os.getenv("TERM") or "xterm"
+local terminal = os.getenv("TERM") or "wezterm"
 local editor = os.getenv("EDITOR") or "nvim"
 local editor_cmd = terminal .. " -e " .. editor
 
@@ -213,13 +213,13 @@ globalkeys = gears.table.join(
 
     -- remap volume keys to volume control
     awful.key({}, "XF86AudioRaiseVolume", function()
-        awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+        awful.spawn("pamixer --increase 10")
     end),
     awful.key({}, "XF86AudioLowerVolume", function()
-        awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+        awful.spawn("pamixer --decrease 10")
     end),
     awful.key({}, "XF86AudioMute", function()
-        awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+        awful.spawn("pamixer --toggle-mute")
     end),
     awful.key({}, "XF86AudioPlay", function()
         awful.spawn("playerctl play-pause")
@@ -230,23 +230,23 @@ globalkeys = gears.table.join(
 
     -- change screen brightness
     awful.key({}, "XF86MonBrightnessUp", function()
-        awful.spawn("xbacklight -ctrl amdgpu_bl0 -inc 10")
+        awful.spawn("brightnessctl set 10%+")
     end),
     awful.key({}, "XF86MonBrightnessDown", function()
-        awful.spawn("xbacklight -ctrl amdgpu_bl0 -dec 10")
+        awful.spawn("brightnessctl set 10%-")
     end),
 
     -- Shortcuts for applications
     -------------
-    awful.key(meh, "v", function()
-        awful.spawn("code")
-    end, { description = "VScode", group = "Alt" }),
-    awful.key(meh, "n", function()
-        awful.spawn("notion-app")
-    end, { description = "Notion", group = "Alt" }),
-    awful.key(meh, "o", function()
-        awful.spawn("obsidian")
-    end, { description = "Obsidian", group = "Alt" }),
+    -- awful.key(meh, "v", function()
+    --     awful.spawn("code")
+    -- end, { description = "VScode", group = "Alt" }),
+    -- awful.key(meh, "n", function()
+    --     awful.spawn("notion-app")
+    -- end, { description = "Notion", group = "Alt" }),
+    -- awful.key(meh, "o", function()
+    --     awful.spawn("obsidian")
+    -- end, { description = "Obsidian", group = "Alt" }),
     awful.key(meh, "s", function()
         awful.spawn("spotify")
     end, { description = "Spotify", group = "Alt" }),
@@ -276,7 +276,7 @@ globalkeys = gears.table.join(
         awful.spawn("brave")
     end, { description = "Open browser", group = "Shortcuts" }),
     awful.key({ super }, "e", function()
-        awful.spawn("thunar")
+        awful.spawn("wezterm start --always-new-process --class='yazi' yazi")
     end, { description = "Open file explorer", group = "Shortcuts" }),
     awful.key({ super, "Shift" }, "s", function()
         awful.util.spawn_with_shell(
@@ -325,18 +325,6 @@ clientkeys = gears.table.join(
             c:emit_signal("request::activate", "key.unminimize", { raise = true })
         end
     end, { description = "restore minimized", group = "client" })
--- awful.key({ super }, "m", function(c)
---     c.maximized = not c.maximized
---     c:raise()
--- end, { description = "(un)maximize", group = "client" }),
--- awful.key({ super, "Control" }, "m", function(c)
---     c.maximized_vertical = not c.maximized_vertical
---     c:raise()
--- end, { description = "(un)maximize vertically", group = "client" }),
--- awful.key({ super, "Shift" }, "m", function(c)
---     c.maximized_horizontal = not c.maximized_horizontal
---     c:raise()
--- end, { description = "(un)maximize horizontally", group = "client" })
 )
 
 -- Bind all key numbers to tags.
@@ -447,7 +435,7 @@ awful.rules.rules = {
         rule_any = {
             instance = {
                 "task manager",
-                "lf",
+                "yazi",
             },
         },
         properties = {
@@ -494,6 +482,15 @@ awful.rules.rules = {
         },
         properties = { floating = true, position = awful.placement.closest_corner },
     },
+    -- Disable default maximized state
+    {
+        rule_any = {
+            class = { "Firefox", "Brave-browser" },
+        },
+        properties = {
+            maximized = false,
+        },
+    },
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
@@ -530,7 +527,7 @@ end)
 beautiful.useless_gap = 5
 
 -- Autostart
-awful.spawn.with_shell(string.format("%s/autostart.sh", os.getenv("SCRIPTS_DIR")))
+awful.spawn.with_shell("~/.scripts/autostart.sh")
 
 -- Padding on all screens
 beautiful.padding = { top = 39 }
