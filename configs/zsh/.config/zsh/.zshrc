@@ -79,10 +79,6 @@ function h() {
     history 0 | awk '{$1=""}1' | fzf-tmux -p --layout reverse --tac | zsh
 }
 
-function brightness() {
-    sudo xbacklight -set $1
-}
-
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
