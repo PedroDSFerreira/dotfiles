@@ -30,7 +30,7 @@ local function entry(_, args)
 	end
 
 	if args[1] == "fzf" then
-		cmd_args = [[fzf-tmux -p 80% --preview='bat --color=always {1}']]
+		cmd_args = [[fzf-tmux -p 80% --preview='bat -p --color=always {1}']]
 	elseif args[1] == "rg" and (shell_value == "bash" or shell_value == "zsh") then
 		cmd_args = [[
 			RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "

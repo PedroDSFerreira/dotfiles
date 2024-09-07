@@ -138,9 +138,9 @@ keymap = [
     # Max-preview
     { on   = "z", run = "plugin max-preview --sync", desc = "Maximize the preview pane" },
 
-    { on   = [ "f","g" ], run  = "plugin fg", desc = "find file by content (fuzzy match)" },
+    { on   = [ "f","g" ], run  = "plugin fg", desc = "find by content" },
 
-    { on   = [ "f","f" ], run  = "plugin fg --args='fzf'", desc = "find file by filename (fuzzy match)" },
+    { on   = [ "f","f" ], run  = "plugin fg --args='fzf'", desc = "find by filename" },
 
     # Chmod
     { on   = [ "c", "h" ], run  = "plugin chmod", desc = "Chmod on selected files" },
