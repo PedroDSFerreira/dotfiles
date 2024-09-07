@@ -15,8 +15,10 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 2;
 
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+  };
 
   time.timeZone = "Europe/Lisbon";
 
@@ -37,6 +39,9 @@ in
     openssh.enable = true;
     libinput.enable = true;
     udisks2.enable = true;
+    resolved.enable = true;
+    dbus.enable = true;
+    blueman.enable = true;
 
     displayManager = {
       defaultSession = "none+awesome";
@@ -83,7 +88,6 @@ in
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   programs.zsh.enable = true;
-  services.blueman.enable = true;
 
   users.groups.pedro = {};
   users.users.pedro = {
@@ -93,30 +97,6 @@ in
     shell = pkgs.zsh;
     group = "pedro";
   };
-
-  # # Declare systemd user services
-  # systemd.user.services = {
-  #   # NetworkManager applet
-  #   "nm-applet" = {
-  #     description = "NetworkManager Applet";
-  #     serviceConfig = {
-  #       ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet";
-  #       Restart = "always";
-  #     };
-  #     wantedBy = [ "default.target" ];
-  #   };
-  #
-  #   # Bluetooth applet
-  #   "blueman-applet" = {
-  #     description = "Bluetooth Manager Applet";
-  #     serviceConfig = {
-  #       ExecStart = "${pkgs.blueman}/bin/blueman-applet";
-  #       Restart = "always";
-  #     };
-  #     wantedBy = [ "default.target" ];
-  #   };
-  # };
-  services.dbus.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -130,10 +110,8 @@ in
     "d /home/pedro/Workspace 0755 pedro pedro -"
     "d /home/pedro/Pictures/Screenshots 0755 pedro pedro -"
   ];
-  # services.kdeconnect = {
-  #   enable = true;
-  # };
-  #
+
+  # TODO: Fix KDE Connect
   # networking.firewall = {
   #   enable = true;
   #   allowedTCPPortRanges = [
@@ -142,22 +120,6 @@ in
   #   allowedUDPPortRanges = [
   #     { from = 1714; to = 1764; } # KDE Connect
   #   ];
-  # };
-  #
-  # systemd.user.services.kdeconnect = {
-  #   Unit = {
-  #     Description = "Adds communication between your desktop and your smartphone";
-  #     After = [ "graphical-session-pre.target" ];
-  #     PartOf = [ "graphical-session.target" ];
-  #   };
-  #
-  #   Install = { WantedBy = [ "graphical-session.target" ]; };
-  #
-  #   Service = {
-  #     Environment = "PATH=${config.home.profileDirectory}/bin";
-  #     ExecStart = "${pkgs.plasma5Packages.kdeconnect-kde}/bin/kdeconnectd";
-  #     Restart = "on-abort";
-  #   };
   # };
 
   nix.gc.automatic = true;

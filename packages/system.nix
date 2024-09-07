@@ -2,10 +2,16 @@
 
 let
   xorg = pkgs.xorg;
+  kde = pkgs.kdePackages;
 in
 {
     inherit (pkgs)
         awesome
+        simplescreenrecorder
+        vlc
+        gimp
+        postman
+        stremio
         blueman
         brave
         brightnessctl
@@ -25,17 +31,21 @@ in
         udiskie
         usbutils
         wezterm
+        xf86_input_wacom
         zsh
         ;
 
     inherit (xorg)
-        xdm
         setxkbmap
+        xf86inputsynaptics
         xset
         xkill
         xprop
         xrandr
-        xbacklight
+        ;
+
+    inherit (kde)
+        kdeconnect-kde
         ;
 
     inherit (unstablePkgs)
