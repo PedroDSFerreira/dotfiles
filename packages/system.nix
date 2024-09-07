@@ -6,6 +6,7 @@ in
 {
     inherit (pkgs)
         brave
+        brightnessctl
         pamixer
         wezterm
         pavucontrol

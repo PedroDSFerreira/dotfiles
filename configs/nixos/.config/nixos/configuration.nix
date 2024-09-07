@@ -2,7 +2,7 @@
 
 let
   unstablePkgs = import <nixos-unstable> { inherit (pkgs) config; };
-  systemPackages = import /home/pedro/.dotfiles/packages/apps.nix { inherit pkgs; inherit unstablePkgs; };
+  systemPackages = import /home/pedro/.dotfiles/packages/system.nix { inherit pkgs; inherit unstablePkgs; };
   cliPackages = import /home/pedro/.dotfiles/packages/cli.nix { inherit pkgs; inherit unstablePkgs; };
 in
 {
@@ -92,7 +92,14 @@ in
     gcc
   ] ++ (builtins.attrValues systemPackages) ++ (builtins.attrValues cliPackages);  # Adding the custom packages
 
-
+  environment.etc = {
+    "profile.local".text = ''
+      # /etc/profile.local: DO NOT EDIT -- this file has been generated automatically.
+      if [ -f "$HOME/.profile" ]; then
+        . "$HOME/.profile"
+      fi
+    '';
+  };
   # services.kdeconnect = {
   #   enable = true;
   # };
