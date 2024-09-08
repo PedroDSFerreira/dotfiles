@@ -29,6 +29,7 @@ end
 
 function config_modules.set_window_behavior(config)
   config.enable_tab_bar = false
+  config.audible_bell = "Disabled"
 end
 
 function config_modules.set_keybindings(config)
