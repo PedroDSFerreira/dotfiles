@@ -100,11 +100,9 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    xclip
-    wget
-    gcc
-  ] ++ (builtins.attrValues systemPackages) ++ (builtins.attrValues cliPackages);  # Adding the custom packages
+  environment.systemPackages = with pkgs;
+    (builtins.attrValues systemPackages) ++
+    (builtins.attrValues cliPackages);
 
   systemd.tmpfiles.rules = [
     "d /home/pedro/Workspace 0755 pedro pedro -"

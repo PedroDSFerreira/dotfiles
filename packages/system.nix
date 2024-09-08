@@ -7,17 +7,14 @@ in
 {
     inherit (pkgs)
         awesome
-        simplescreenrecorder
-        vlc
-        gimp
-        postman
-        stremio
         blueman
         brave
         brightnessctl
         discord
         docker
         feh
+        gcc
+        gimp
         networkmanagerapplet
         notepadqq
         pamixer
@@ -25,12 +22,18 @@ in
         picom-pijulius
         playerctl
         polybar
+        postman
         rofi
         scrot
+        simplescreenrecorder
         spotify
+        stremio
         udiskie
         usbutils
+        vlc
         wezterm
+        wget
+        xclip
         xf86_input_wacom
         zsh
         ;
