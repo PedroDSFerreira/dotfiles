@@ -1,4 +1,5 @@
-![Screenshot](screenshot.png)
+![Screenshot1](screenshot1.png)
+![Screenshot2](screenshot2.png)
 
 # Linux Config Files/ Installed Packages
 
