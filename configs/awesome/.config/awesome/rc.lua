@@ -264,8 +264,11 @@ globalkeys = gears.table.join(
         awful.spawn("code")
     end, { description = "VScode", group = "Shortcuts" }),
     awful.key({ alt, "Control" }, "n", function()
-        awful.spawn("notion-app")
+        awful.util.spawn_with_shell("zsh -i -c 'brave --app=https://www.notion.so/'")
     end, { description = "Notion", group = "Shortcuts" }),
+    awful.key({ alt, "Control" }, "c", function()
+        awful.util.spawn_with_shell("zsh -i -c 'brave --app=https://calendar.notion.so/'")
+    end, { description = "Notion Calendar", group = "Shortcuts" }),
     awful.key({ alt, "Control" }, "s", function()
         awful.spawn("spotify")
     end, { description = "Spotify", group = "Shortcuts" }),
@@ -488,6 +491,17 @@ awful.rules.rules = {
             maximized = false,
         },
     },
+
+    {
+        rule_any = {
+            class = { "Brave-browser" },
+            instance = { "notion.so", "calendar.notion.so" },
+        },
+        properties = {
+            floating = false,
+        },
+    },
+
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
