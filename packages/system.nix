@@ -3,6 +3,7 @@
 let
   xorg = pkgs.xorg;
   kde = pkgs.kdePackages;
+  jetbrains = pkgs.jetbrains;
 in
 {
     inherit (pkgs)
@@ -14,6 +15,7 @@ in
         docker
         feh
         gcc
+        prismlauncher
         gimp
         networkmanagerapplet
         notepadqq
@@ -30,7 +32,7 @@ in
         stremio
         udiskie
         usbutils
-        vlc
+        mpv
         wezterm
         wget
         xclip
@@ -49,6 +51,10 @@ in
 
     inherit (kde)
         kdeconnect-kde
+        ;
+
+    inherit (jetbrains)
+        idea-community
         ;
 
     inherit (unstablePkgs)

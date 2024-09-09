@@ -20,6 +20,8 @@ in
     networkmanager.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+
   time.timeZone = "Europe/Lisbon";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -75,6 +77,11 @@ in
 
     pipewire = {
       enable = true;
+      extraConfig.client = {
+        "context.properties" = {
+          "module.x11.bell" = false;
+        };
+      };
       alsa = {
         enable = true;
         support32Bit = true;
@@ -93,7 +100,7 @@ in
   users.users.pedro = {
     isNormalUser = true;
     description = "Pedro Ferreira";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     group = "pedro";
   };
@@ -107,6 +114,7 @@ in
   systemd.tmpfiles.rules = [
     "d /home/pedro/Workspace 0755 pedro pedro -"
     "d /home/pedro/Pictures/Screenshots 0755 pedro pedro -"
+    "d /home/pedro/Videos/Recordings 0755 pedro pedro -"
   ];
 
   # TODO: Fix KDE Connect
