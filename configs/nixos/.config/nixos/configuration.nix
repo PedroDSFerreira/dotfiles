@@ -8,14 +8,15 @@ in
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./boot.nix
-      ./users.nix
-      ./display.nix
-      ./network.nix
       ./audio.nix
-      ./services.nix
+      ./bluetooth.nix
+      ./boot.nix
+      ./display.nix
+      ./hardware-configuration.nix
       ./locale.nix
+      ./network.nix
+      ./services.nix
+      ./users.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
