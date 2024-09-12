@@ -17,11 +17,13 @@
 
       displayManager = {
         sessionCommands = ''
-          picom &
-          udiskie --tray --notify &
-          nm-applet &
           blueman-applet &
+          kdeconnect-indicator &
+          nm-applet &
+          ollama serve &
+          picom &
           sh $HOME/.scripts/background.sh &
+          udiskie --tray --notify &
         '';
         lightdm.greeters.slick.enable = true;
       };
