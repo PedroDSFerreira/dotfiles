@@ -90,11 +90,11 @@ awful.layout.layouts = {
 -- {{{ Menu
 
 -- Adds an empty wibar under my polybar so that the workarea changes
--- awful.wibar({
---     position = "top",
---     height = 28,
---     opacity = 0,
--- })
+awful.wibar({
+    position = "top",
+    height = 28,
+    opacity = 0,
+})
 
 -- }}}
 
