@@ -24,7 +24,7 @@ local function set_status_color(status)
 	else
 		return "#ec613f"
 	end
-	
+
 end
 
 local function fix_str_ch(str)
@@ -50,7 +50,7 @@ local function make_git_table(git_status_str)
 			split_value = string_split(value,"  ")
 		end
 
-		if split_value[#split_value - 1] == "??" then 
+		if split_value[#split_value - 1] == "??" then
 			git_status = "U"
 			is_dirty = true
 		elseif split_value[#split_value - 1] == "!!" then
@@ -75,10 +75,10 @@ local function make_git_table(git_status_str)
 		multi_path = string_split(split_value[#split_value],"/")
 		if (multi_path[#multi_path] == "" and #multi_path == 2) or git_status ~= "I" then
 			filename = multi_path[1]
-		else 
+		else
 			filename = split_value[#split_value]
 		end
-		
+
 		convert_name = fix_str_ch(filename)
 		file_table[convert_name] = git_status
 	end
@@ -106,7 +106,7 @@ local clear_state = ya.sync(function(st)
 end)
 
 local function update_git_status(path)
-	ya.manager_emit("plugin", { "git", args = ya.quote(tostring(path))})	
+	ya.manager_emit("plugin", { "git", args = ya.quote(tostring(path))})
 end
 
 local is_in_git_dir = ya.sync(function(st)
@@ -118,7 +118,7 @@ local flush_empty_folder_status = ya.sync(function(st)
 	local folder = cx.active.current
 	if #folder.window == 0 then
 		clear_state()
-		ya.manager_emit("plugin", { "git", args = ya.quote(tostring(cwd))})		
+		ya.manager_emit("plugin", { "git", args = ya.quote(tostring(cwd))})
 	end
 end)
 
@@ -127,14 +127,14 @@ local handle_path_change = ya.sync(function(st)
 	if st.cwd ~= cwd then
 		st.cwd = cwd
 		clear_state()
-		ya.manager_emit("plugin", { "git", args = ya.quote(tostring(cwd))})		
+		ya.manager_emit("plugin", { "git", args = ya.quote(tostring(cwd))})
 	end
 end)
 
 
 local M = {
 	setup = function(st,opts)
-	
+
 		local function linemode_git(self)
 			local f = self._file
 			local git_span = {}
@@ -147,25 +147,25 @@ local M = {
 					git_status = "U"
 				elseif st.git_file_status and st.git_file_status[name] then
 					git_status = st.git_file_status[name]
-				else 
+				else
 					git_status = nil
 				end
-			
+
 				local color = set_status_color(git_status)
 				if f:is_hovered() then
-					git_span = (git_status ) and ui.Span(git_status .." ") or ui.Span("✓ ")	
+					git_span = (git_status ) and ui.Span(git_status .." ") or ui.Span("✓ ")
 				else
-					git_span = (git_status) and ui.Span(git_status .." "):fg(color) or ui.Span("✓ "):fg(color)	
+					git_span = (git_status) and ui.Span(git_status .." "):fg(color) or ui.Span("✓ "):fg(color)
 				end
 			end
 			return git_span
 		end
 		Linemode:children_add(linemode_git,8000)
 
-		local function header_git(self)
-			return (st.git_branch and st.git_branch ~= "") and ui.Line {ui.Span(" <".. st.git_branch .. st.git_is_dirty .. ">"):fg("#f6a6da")} or ui.Line {}				
-		end
-		Header:children_add(header_git,1400,Header.LEFT)
+		-- local function header_git(self)
+		-- 	return (st.git_branch and st.git_branch ~= "") and ui.Line {ui.Span(" <".. st.git_branch .. st.git_is_dirty .. ">"):fg("#f6a6da")} or ui.Line {}
+		-- end
+		-- Header:children_add(header_git,1400,Header.LEFT)
 
 		ps.sub("cd",handle_path_change)
 		ps.sub("delete",flush_empty_folder_status)
@@ -178,26 +178,26 @@ local M = {
 		local is_ignore_dir,is_untracked_dir
 
 		local git_branch
-		local command = "git symbolic-ref HEAD 2> /dev/null" 
+		local command = "git symbolic-ref HEAD 2> /dev/null"
 		local file = io.popen(command, "r")
-		output = file:read("*a") 
+		output = file:read("*a")
 		file:close()
 
 		if output ~= nil and  output ~= "" then
 			local split_output = string_split(output:sub(1,-2),"/")
-			
+
 			git_branch = split_output[3]
 		elseif is_in_git_dir() then
 			git_branch = nil
 		else
 			return
 		end
-		
+
 		local git_status_str = ""
 		local git_file_status = nil
-		local command = "git status --ignored -s --ignore-submodules=dirty 2> /dev/null" 
+		local command = "git status --ignored -s --ignore-submodules=dirty 2> /dev/null"
 		local file = io.popen(command, "r")
-		output = file:read("*a") 
+		output = file:read("*a")
 		file:close()
 
 		if output ~= nil and  output ~= "" then
@@ -211,7 +211,7 @@ local M = {
 function M:fetch()
 	local path = is_in_git_dir()
 	if path then
-		update_git_status(path)	
+		update_git_status(path)
 	end
 	return 3
 end
