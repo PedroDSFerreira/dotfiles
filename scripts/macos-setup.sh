@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+echo "Installing stow..."
+nix-env -i stow
+
 echo "Installing homebrew bundle..."
 brew tap Homebrew/bundle
 

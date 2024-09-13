@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+echo "Installing Nix unstable channel..."
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+sudo nix-channel --update
+
 echo "Installing cli packages..."
 nix-env -f packages/cli.nix -i
 
@@ -18,7 +25,7 @@ stow -d configs -t $HOME \
 
 echo "Setting up zsh as default shell..."
 if which zsh >/dev/null 2>&1; then
-    nix-env -iA nixpkgs.zsh
+    nix-env -i nixpkgs.zsh
 fi
 
 zsh_path=$(which zsh)
