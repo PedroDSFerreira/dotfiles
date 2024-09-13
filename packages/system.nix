@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { }, unstablePkgs ? import <nixos-unstable> { } }:
+{ pkgs ? import <nixpkgs> { }, unstablePkgs ? import <unstable> { } }:
 
 let
   xorg = pkgs.xorg;

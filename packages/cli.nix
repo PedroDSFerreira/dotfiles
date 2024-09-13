@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { }, unstablePkgs ? import <nixos-unstable> { } }:
+{ pkgs ? import <nixpkgs> { }, unstablePkgs ? import <unstable> { } }:
 
 let python311 = pkgs.python311Packages;
 in {
