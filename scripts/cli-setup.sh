@@ -12,6 +12,7 @@ nix-env -f packages/cli.nix -i
 
 echo "Creating cli symlinks..."
 stow -d configs -t $HOME \
+    btop \
     fonts \
 	git \
 	lazy \

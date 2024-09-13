@@ -6,6 +6,7 @@
 
 - [alacritty](configs/alacritty)
 - [awesomeWM](configs/awesome)
+- [btop](configs/btop)
 - [lazygit & lazydocker](configs/lazy)
 - [neovim](configs/nvim)
 - [picom](configs/picom)

@@ -13,6 +13,7 @@ nix-env -i stow
 echo "Creating symlinks..."
 stow -d configs -t $HOME \
     awesome \
+    btop \
     fonts \
     git \
     lazy \
