@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+echo "Installing Nix unstable channel..."
+nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+
 echo "Installing stow..."
 nix-env -i stow
 
