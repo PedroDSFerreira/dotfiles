@@ -1,7 +1,6 @@
-![Screenshot1](screenshot1.png)
-![Screenshot2](screenshot2.png)
-
 # Linux Config Files/ Installed Packages
+
+![Screenshot2](screenshot2.png)
 
 ## Contains configs for:
 
@@ -15,19 +14,32 @@
 - [starship](configs/starship)
 - [tmux](configs/tmux)
 - [wezterm](configs/wezterm)
-- [xorg](configs/x)
 - [yabai](configs/yabai)
 - [yazi](configs/yazi)
 - [zsh](configs/zsh)
 
 ---
 
-## MacOS setup
+## NixOS setup
 
 ### Requirements
 
 - Git
-- Curl
+- [Nix](https://nixos.org/download.html)
+
+### Install:
+
+```sh
+git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
+    cd ~/.dotfiles && \
+    sh scripts/nixos-setup.sh
+```
+
+## MacOS setup (not tested)
+
+### Requirements
+
+- Git
 - [Nix](https://nixos.org/download.html)
 - [Brew](https://brew.sh/)
 
@@ -36,15 +48,14 @@
 ```sh
 git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
     cd ~/.dotfiles && \
-    ./macos-setup.sh
+    sh scripts/macos-setup.sh
 ```
 
-## Nix Packages (CLI tools only)
+## CLI tools setup (not tested)
 
 ### Requirements
 
 - Git
-- Curl
 - [Nix](https://nixos.org/download.html)
 
 ### Install:
@@ -52,31 +63,30 @@ git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
 ```sh
 git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
     cd ~/.dotfiles && \
-    ./cli-setup.sh
+    sh scripts/cli-setup.sh
 ```
-
-### Compatibility:
-
-Tested with:
-
-- Debian 12
-- Arch Linux
-- MacOS Sonoma 14.6.1
 
 ---
 
 ## Symlinks
 
-- to create/remove symlinks, cd into `configs/`
-
 ### Create:
 
 ```bash
-stow -t ~/ *
+cd ~/.dotfiles
+stow -d configs -t ~/ <config-folder-name>
 ```
 
 ### Remove:
 
 ```bash
- stow -D -t ~/ *
+cd ~/.dotfiles
+stow -D -d configs -t ~/ <config-folder-name>
 ```
+
+---
+
+## Screenshots
+
+![Screenshot1](screenshot1.png)
+![Screenshot2](screenshot2.png)
