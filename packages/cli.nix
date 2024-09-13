@@ -10,8 +10,8 @@ in {
   # LSP/linters/formatters
   inherit (pkgs)
     stylua prettierd autoflake isort black lua-language-server nodejs_20
-    nixfmt-classic shfmt clang-tools nixd gopls
-    emmet-ls gofumpt goimports-reviser golines pyright;
+    nixfmt-classic shfmt clang-tools nixd gopls emmet-ls gofumpt
+    goimports-reviser golines pyright marksman;
 
   inherit (python311) flake8;
 
