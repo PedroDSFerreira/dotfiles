@@ -4,7 +4,8 @@
 set -e
 
 echo "Installing Nix unstable channel..."
-nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+sudo nix-channel --update
 
 echo "Installing stow..."
 nix-env -i stow
