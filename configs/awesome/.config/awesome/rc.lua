@@ -252,7 +252,7 @@ globalkeys = gears.table.join(
     end, { description = "Open file explorer", group = "Alt" }),
     awful.key(meh, "s", function()
         awful.util.spawn_with_shell(
-            "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -s -e 'xclip -selection clipboard -t image/png -i $f'"
+            "scrot --freeze ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -s -e 'xclip -selection clipboard -t image/png -i $f'"
         )
         naughty.notify({ text = "Screenshot saved", timeout = 2 })
     end, { description = "Take screenshot", group = "Alt" }),
@@ -277,7 +277,7 @@ globalkeys = gears.table.join(
     end, { description = "Open file explorer", group = "Shortcuts" }),
     awful.key({ super, "Shift" }, "s", function()
         awful.util.spawn_with_shell(
-            "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -s -e 'xclip -selection clipboard -t image/png -i $f'"
+            "scrot --freeze ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -s -e 'xclip -selection clipboard -t image/png -i $f'"
         )
         naughty.notify({ text = "Screenshot saved", timeout = 2 })
     end, { description = "Take screenshot", group = "screen" }),
