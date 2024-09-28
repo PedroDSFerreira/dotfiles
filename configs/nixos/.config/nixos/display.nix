@@ -9,14 +9,13 @@
 
       windowManager.awesome = {
         enable = true;
-        luaModules = with pkgs.luaPackages; [
-          luarocks
-          luadbi-mysql
-        ];
+        luaModules = with pkgs.luaPackages; [ luarocks luadbi-mysql ];
       };
 
       displayManager = {
         sessionCommands = ''
+          tailscale up &
+          tailscale-systray &
           blueman-applet &
           kdeconnect-indicator &
           nm-applet &
@@ -29,9 +28,7 @@
       };
     };
 
-    displayManager = {
-      defaultSession = "none+awesome";
-    };
+    displayManager = { defaultSession = "none+awesome"; };
   };
 }
 
