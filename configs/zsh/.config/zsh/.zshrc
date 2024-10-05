@@ -75,6 +75,10 @@ alias ls="eza --icons -s type"
 alias lt="eza -T --icons -L=1"
 alias ltt="eza -T --icons -L=2"
 
+function upload-tmp() {
+  curl -F "file=@$1" https://temp.sh/upload
+}
+
 function h() {
     history 0 | awk '{$1=""}1' | fzf-tmux -p --layout reverse --tac | zsh
 }
