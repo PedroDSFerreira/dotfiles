@@ -4,8 +4,8 @@
 set -e
 
 echo "Installing Nix unstable channel..."
-sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
-sudo nix-channel --update
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+nix-channel --update
 
 echo "Installing cli packages..."
 nix-env -f packages/cli.nix -i
