@@ -74,6 +74,7 @@ alias la="eza -a --icons -s type"
 alias ls="eza --icons -s type"
 alias lt="eza -T --icons -L=1"
 alias ltt="eza -T --icons -L=2"
+alias webcam="mpv --profile=low-latency --untimed --no-terminal --script-opts-append=osc-visibility=never --geometry=30% /dev/video0 --title='webcam' &"
 
 function upload-tmp() {
   curl -F "file=@$1" https://temp.sh/upload

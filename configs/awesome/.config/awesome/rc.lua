@@ -412,6 +412,21 @@ awful.rules.rules = {
         },
     },
 
+    -- Webcam Overlay
+    {
+        rule = {
+            class = "mpv",
+            name = "webcam",
+        },
+        properties = {
+            floating = true,
+            sticky = true,
+            ontop = true,
+            placement = function(c)
+                awful.placement.bottom_right(c, { margins = { right = 10, bottom = 10 } })
+            end,        },
+    },
+
     -- Floating clients.
     {
         rule_any = {
