@@ -26,7 +26,7 @@
 ### Requirements
 
 - Git
-- [Nix](https://nixos.org/download.html)
+- [NixOS](https://nixos.org/download.html)
 
 ### Install:
 
@@ -52,7 +52,7 @@ git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
     sh scripts/macos-setup.sh
 ```
 
-## CLI tools setup (not tested)
+## CLI tools setup
 
 ### Requirements
 
