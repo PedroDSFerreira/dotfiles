@@ -143,7 +143,7 @@ keymap = [
 
     { on   = [ "f","f" ], run  = "plugin fg --args='fzf'", desc = "find by filename" },
 
-    { on   = [ "f","u" ], run  = "plugin usb", desc = "find mounted drives" },
+    { on   = [ "f","u" ], run  = "plugin dir-picker --args='/run/media/pedro'", desc = "find mounted drives" },
 
     # Chmod
     { on   = [ "c", "h" ], run  = "plugin chmod", desc = "Chmod on selected files" },
