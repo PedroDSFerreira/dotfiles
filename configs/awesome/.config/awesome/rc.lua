@@ -423,7 +423,7 @@ awful.rules.rules = {
             sticky = true,
             ontop = true,
             placement = function(c)
-                awful.placement.bottom_right(c, { margins = { right = 10, bottom = 10 } })
+                awful.placement.bottom_right(c, { margins = { right = 3, bottom = 3 } })
             end,        },
     },
 
