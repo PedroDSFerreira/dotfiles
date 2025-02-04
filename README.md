@@ -36,7 +36,7 @@ git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
     sh scripts/nixos-setup.sh
 ```
 
-## MacOS setup (not tested)
+## MacOS setup
 
 ### Requirements
 
