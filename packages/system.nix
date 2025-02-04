@@ -10,7 +10,7 @@ in {
     networkmanagerapplet notepadqq pamixer pavucontrol picom-pijulius playerctl
     polybar postman prismlauncher python3 rofi scrot simplescreenrecorder
     spotify stremio udiskie unzip usbutils wezterm wget xclip xf86_input_wacom
-    zsh obsidian gnumake libgcc cmake tailscale tailscale-systray ruby;
+    zsh obsidian gnumake libgcc cmake tailscale tailscale-systray;
 
   inherit (xorg) setxkbmap xf86inputsynaptics xset xkill xprop xrandr;
 
