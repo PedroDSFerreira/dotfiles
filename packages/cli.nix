@@ -5,7 +5,7 @@ in {
   inherit (pkgs)
     bat btop calc delta du-dust eza fd ffmpegthumbnailer fontconfig fzf git glow
     httpie jq k9s lazydocker lazygit ouch poppler_utils ripgrep sd speedtest-cli
-    sshs starship stow tealdeer tmux thokr;
+    sshs starship stow tealdeer tmux thokr duf;
 
   # LSP/linters/formatters
   inherit (pkgs)
