@@ -5,7 +5,7 @@ in {
   inherit (pkgs)
     bat btop calc delta du-dust eza fd ffmpegthumbnailer fontconfig fzf git glow
     httpie jq k9s lazydocker lazygit ouch poppler_utils ripgrep sd speedtest-cli
-    sshs starship stow tealdeer tmux thokr duf;
+    sshs starship stow tealdeer tmux thokr duf yazi;
 
   # LSP/linters/formatters
   inherit (pkgs)
@@ -15,5 +15,5 @@ in {
 
   inherit (python311) flake8;
 
-  inherit (unstablePkgs) neovim ollama yazi;
+  inherit (unstablePkgs) neovim ollama;
 }
