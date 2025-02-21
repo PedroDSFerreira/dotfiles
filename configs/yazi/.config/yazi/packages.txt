@@ -1,0 +1,10 @@
+yazi-rs/flavors:catppuccin-mocha
+Rolv-Apneseth/starship
+yazi-rs/plugins:smart-enter
+yazi-rs/plugins:chmod
+Reledia/glow
+ndtoan96/ouch
+dedukun/relative-motions
+yazi-rs/plugins:git
+DreamMaoMao/fg
+yazi-rs/plugins:toggle-pane
