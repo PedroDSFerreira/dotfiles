@@ -19,8 +19,8 @@ keymap = [
 	{ on = ["<C-b>"], run = "arrow -100%", desc = "Move cursor up one page" },
 	{ on = ["<C-f>"], run = "arrow 100%",  desc = "Move cursor down one page" },
 
-	{ on = [ "g", "g" ], run = "arrow -99999999", desc = "Move cursor to the top" },
-	{ on = ["G"],          run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+	{ on = [ "g", "g" ], run = "arrow top", desc = "Move cursor to the top" },
+	{ on = ["G"],          run = "arrow bot",  desc = "Move cursor to the bottom" },
 
 	# Navigation
 	{ on = ["h"], run = "leave", desc = "Go back to the parent directory" },
@@ -34,11 +34,12 @@ keymap = [
 	{ on = ["J"], run = "seek 5",  desc = "Seek down 5 units in the preview" },
 
 	# Selection
-	{ on = ["<Space>"], run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = ["<Space>"], run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
 	{ on = ["v"],       run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
-	{ on = ["V"],       run = "select_all --state=true",            desc = "Select all files" },
+	{ on = ["V"],       run = "toggle_all",            desc = "Select all files" },
 
 	# Operation
+	{ on = ["e"],         run = "edit",                        desc = "Edit selected file" },
 	{ on = ["y"],         run = "yank",                        desc = "Yank selected files (copy)" },
 	{ on = ["x"],         run = "yank --cut",                  desc = "Yank selected files (cut)" },
 	{ on = ["p"],         run = "paste",                       desc = "Paste yanked files" },
@@ -115,41 +116,38 @@ keymap = [
 	{ on = ["?"],    run = "help", desc = "Open help" },
 
     # Relative motions
-    { on = [ "1" ], run = "plugin relative-motions --args=1", desc = "Move in relative steps" },
+    { on = [ "1" ], run = "plugin relative-motions 1", desc = "Move in relative steps" },
 
-    { on = [ "2" ], run = "plugin relative-motions --args=2", desc = "Move in relative steps" },
+    { on = [ "2" ], run = "plugin relative-motions 2", desc = "Move in relative steps" },
 
-    { on = [ "3" ], run = "plugin relative-motions --args=3", desc = "Move in relative steps" },
+    { on = [ "3" ], run = "plugin relative-motions 3", desc = "Move in relative steps" },
 
-    { on = [ "4" ], run = "plugin relative-motions --args=4", desc = "Move in relative steps" },
+    { on = [ "4" ], run = "plugin relative-motions 4", desc = "Move in relative steps" },
 
-    { on = [ "5" ], run = "plugin relative-motions --args=5", desc = "Move in relative steps" },
+    { on = [ "5" ], run = "plugin relative-motions 5", desc = "Move in relative steps" },
 
-    { on = [ "6" ], run = "plugin relative-motions --args=6", desc = "Move in relative steps" },
+    { on = [ "6" ], run = "plugin relative-motions 6", desc = "Move in relative steps" },
 
-    { on = [ "7" ], run = "plugin relative-motions --args=7", desc = "Move in relative steps" },
+    { on = [ "7" ], run = "plugin relative-motions 7", desc = "Move in relative steps" },
 
-    { on = [ "8" ], run = "plugin relative-motions --args=8", desc = "Move in relative steps" },
+    { on = [ "8" ], run = "plugin relative-motions 8", desc = "Move in relative steps" },
 
-    { on = [ "9" ], run = "plugin relative-motions --args=9", desc = "Move in relative steps" },
-
-    # Searchjump
-    { on   = [ "s" ], run = "plugin searchjump", desc = "searchjump mode" },
+    { on = [ "9" ], run = "plugin relative-motions 9", desc = "Move in relative steps" },
 
     # Max-preview
-    { on   = "z", run = "plugin max-preview --sync", desc = "Maximize the preview pane" },
+    { on   = "z", run = "plugin toggle-pane max-preview", desc = "Maximize the preview pane" },
 
     { on   = [ "f","g" ], run  = "plugin fg", desc = "find by content" },
 
-    { on   = [ "f","f" ], run  = "plugin fg --args='fzf'", desc = "find by filename" },
+    { on   = [ "f","f" ], run  = "plugin fg 'fzf'", desc = "find by filename" },
 
-    { on   = [ "f","u" ], run  = "plugin dir-picker --args='/run/media/pedro'", desc = "find mounted drives" },
+    { on   = [ "f","u" ], run  = "plugin dir-picker '/run/media/pedro'", desc = "find mounted drives" },
 
     # Chmod
     { on   = [ "c", "h" ], run  = "plugin chmod", desc = "Chmod on selected files" },
 
     # Compress files
-    { on = ["Z"], run = "plugin ouch --args=zip", desc = "Compress with ouch" }
+    { on = ["Z"], run = "plugin ouch zip", desc = "Compress with ouch" }
 ]
 
 [tasks]
