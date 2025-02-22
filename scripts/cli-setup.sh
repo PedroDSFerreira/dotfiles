@@ -33,6 +33,10 @@ zsh_path=$(which zsh)
 sudo sh -c "echo $zsh_path >> /etc/shells"
 chsh -s $zsh_path
 
+
+echo "Installing yazi plugins..."
+sh $HOME/.config/yazi/install.sh
+
 echo "Installing zsh plugins..."
 source $HOME/.zshenv
 
