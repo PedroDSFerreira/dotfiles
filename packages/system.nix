@@ -4,20 +4,75 @@ let
   xorg = pkgs.xorg;
   kde = pkgs.kdePackages;
   jetbrains = pkgs.jetbrains;
-in {
+in
+{
+  # Applications and user tools
   inherit (pkgs)
-    awesome blueman brave brightnessctl cargo discord docker feh gcc gimp go mpv
-    networkmanagerapplet notepadqq pamixer pavucontrol picom-pijulius playerctl
-    polybar postman prismlauncher python3 rofi scrot simplescreenrecorder
-    spotify stremio udiskie unzip usbutils wezterm wget xclip xf86_input_wacom
-    zsh obsidian gnumake libgcc cmake tailscale tailscale-systray;
+    brave
+    discord
+    feh
+    gimp
+    mpv
+    notepadqq
+    obsidian
+    postman
+    simplescreenrecorder
+    spotify
+    stremio
+    wezterm;
 
-  inherit (xorg) setxkbmap xf86inputsynaptics xset xkill xprop xrandr;
+  # Development tools
+  inherit (pkgs)
+    cargo
+    cmake
+    gcc
+    gnumake
+    go
+    libgcc
+    python3;
 
-  inherit (kde) kdeconnect-kde;
+  # KDE and JetBrains
+  inherit (kde)
+    kdeconnect-kde;
 
-  inherit (jetbrains) idea-community;
+  inherit (jetbrains)
+    idea-community;
 
-  inherit (unstablePkgs)
-  ;
+  # Networking and system utilities
+  inherit (pkgs)
+    blueman
+    brightnessctl
+    docker
+    networkmanagerapplet
+    tailscale
+    tailscale-systray
+    udiskie
+    unzip
+    usbutils
+    wget
+    zsh;
+
+  # Window management and UI
+  inherit (pkgs)
+    awesome
+    pamixer
+    pavucontrol
+    picom-pijulius
+    playerctl
+    polybar
+    rofi
+    scrot;
+
+  # Xorg related tools
+  inherit (xorg)
+    setxkbmap
+    xkill
+    xprop
+    xrandr
+    xset
+    xf86inputsynaptics;
+
+  inherit (pkgs)
+    xclip
+    xf86_input_wacom;
 }
