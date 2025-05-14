@@ -4,7 +4,7 @@
 set -e
 
 echo "Installing stow..."
-nix-env -i stow
+nix-env -iA stow
 
 echo "Installing homebrew bundle..."
 brew tap Homebrew/bundle

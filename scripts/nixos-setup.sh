@@ -3,12 +3,8 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-echo "Installing Nix unstable channel..."
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable unstable
-sudo nix-channel --update
-
 echo "Installing stow..."
-nix-env -i stow
+nix-env -iA stow
 
 echo "Creating symlinks..."
 stow -d configs -t $HOME \
