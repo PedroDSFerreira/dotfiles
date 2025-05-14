@@ -1,19 +1,71 @@
 { pkgs ? import <nixpkgs> { }, unstablePkgs ? import <unstable> { } }:
 
-let python311 = pkgs.python311Packages;
-in {
+let
+  python311 = pkgs.python311Packages;
+in
+{
+  # CLI tools
   inherit (pkgs)
-    bat btop calc delta du-dust eza fd ffmpegthumbnailer fontconfig fzf git glow
-    httpie jq k9s lazydocker lazygit ouch poppler_utils ripgrep sd speedtest-cli
-    sshs starship stow tealdeer tmux thokr duf yazi;
+    bat
+    btop
+    calc
+    delta
+    du-dust
+    duf
+    dysk
+    eza
+    fd
+    fzf
+    git
+    glow
+    httpie
+    jq
+    k9s
+    lazydocker
+    lazygit
+    neovim
+    ollama
+    ouch
+    repgrep
+    ripgrep
+    sd
+    sshs
+    starship
+    stow
+    tealdeer
+    thokr
+    tmux
+    yazi;
 
-  # LSP/linters/formatters
+  # File/media utilities
   inherit (pkgs)
-    stylua prettierd autoflake isort black lua-language-server nodejs_20
-    nixfmt-classic shfmt clang-tools nixd gopls emmet-ls gofumpt
-    goimports-reviser golines pyright marksman;
+    ffmpegthumbnailer
+    fontconfig
+    poppler_utils
+    speedtest-cli;
 
-  inherit (python311) flake8;
+  # LSPs, linters, and formatters
+  inherit (pkgs)
+    autoflake
+    black
+    clang-tools
+    emmet-ls
+    gofumpt
+    goimports-reviser
+    golines
+    gopls
+    isort
+    lua-language-server
+    marksman
+    nixd
+    nixfmt-classic
+    nodejs_20
+    prettierd
+    pyright
+    shfmt
+    stylua;
 
-  inherit (unstablePkgs) neovim ollama;
+  # Python-specific
+  inherit (python311)
+    flake8;
 }
