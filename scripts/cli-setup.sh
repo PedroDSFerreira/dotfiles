@@ -11,6 +11,7 @@ stow -d configs -t $HOME \
     btop \
     fonts \
 	git \
+    k9s \
 	lazy \
 	nvim \
     others \
