@@ -9,6 +9,8 @@ keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 
+-- toggle wrap
+keymap.set("n", "<leader>w", ":set wrap!<CR>", { desc = "Toggle word wrap" })
 -- indent lines
 -- in visual mode, keep lines selected
 keymap.set("v", "<A-h>", "<gv", { desc = "Indent left" })
