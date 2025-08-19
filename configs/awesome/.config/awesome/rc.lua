@@ -392,9 +392,7 @@ clientbuttons = gears.table.join(
 
 -- Set keys
 root.keys(globalkeys)
--- }}}
 
--- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- All clients will match this rule.
@@ -440,28 +438,26 @@ awful.rules.rules = {
         },
     },
 
-    -- Task Manager
+    -- Widget windows
     {
         rule_any = {
             instance = {
-                "task manager",
-                "yazi",
+                "widget",
             },
         },
         properties = {
             floating = true,
             ontop = true,
             sticky = true,
-            -- placement = awful.placement.centered,
-            width = awful.screen.focused().workarea.width * 0.8,
-            height = awful.screen.focused().workarea.height * 0.8,
+            placement = awful.placement.centered,
+            -- width = awful.screen.focused().workarea.width * 0.8,
+            -- height = awful.screen.focused().workarea.height * 0.8,
         },
     },
     -- Floating clients.
     {
         rule_any = {
             instance = {
-                "DTA", -- Firefox addon DownThemAll.
                 "copyq", -- Includes session name in class.
                 "pinentry",
             },
@@ -470,13 +466,10 @@ awful.rules.rules = {
                 "Blueman-manager",
                 "Gpick",
                 "Kruler",
-                "MessageWin", -- kalarm.
                 "Sxiv",
-                "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
                 "Wpa_gui",
                 "veromix",
                 "xtightvncviewer",
-                "Pavucontrol",
             },
 
             -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -499,22 +492,9 @@ awful.rules.rules = {
         },
         properties = {
             maximized = false,
-        },
-    },
-
-    {
-        rule_any = {
-            class = { "Brave-browser" },
-            instance = { "notion.so", "calendar.notion.so" },
-        },
-        properties = {
             floating = false,
         },
     },
-
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
 }
 -- }}}
 
