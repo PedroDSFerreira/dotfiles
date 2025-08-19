@@ -35,7 +35,7 @@ sudo sh -c "echo $zsh_path >> /etc/shells"
 chsh -s $zsh_path
 
 echo "Installing yazi plugins..."
-sh $HOME/.config/yazi/install.sh
+ya pkg install
 
 echo "Installing zsh plugins..."
 source $HOME/.zshenv
