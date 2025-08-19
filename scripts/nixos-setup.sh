@@ -40,7 +40,7 @@ echo "Building configurations..."
 sudo nixos-rebuild switch -I nixos-config=$HOME/.config/nixos/configuration.nix
 
 echo "Installing yazi plugins..."
-sh $HOME/.config/yazi/install.sh
+ya pkg install
 
 echo "Installing zsh plugins..."
 source $HOME/.zshenv
