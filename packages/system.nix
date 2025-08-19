@@ -43,6 +43,7 @@ in
   inherit (pkgs)
     blueman
     brightnessctl
+    desktop-file-utils
     docker
     networkmanagerapplet
     tailscale
