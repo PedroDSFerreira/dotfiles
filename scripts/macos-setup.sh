@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-# Exit immediately if a command exits with a non-zero status
 set -e
 
 echo "Installing stow..."
-nix-env -iA stow
+nix-env -iA nixpkgs.stow
 
 echo "Installing homebrew bundle..."
 brew tap Homebrew/bundle
@@ -22,4 +21,3 @@ yabai --install-service
 
 echo "Executing cli setup..."
 sh cli-setup.sh
-
