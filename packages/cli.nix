@@ -34,8 +34,7 @@ in
     stow
     tealdeer
     thokr
-    tmux
-    yazi;
+    tmux;
 
   # File/media utilities
   inherit (pkgs)
@@ -68,4 +67,7 @@ in
   # Python-specific
   inherit (python311)
     flake8;
+
+  inherit (unstablePkgs)
+    yazi;
 }
