@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
-# Exit immediately if a command exits with a non-zero status
 set -e
+
+echo "Installing Nix unstable channel..."
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+nix-channel --update
 
 echo "Installing cli packages..."
 nix-env -f packages/cli.nix -i
 
-echo "Creating cli symlinks..."
+echo "Creating symlinks..."
 stow -d configs -t $HOME \
     btop \
     fonts \
@@ -30,7 +33,6 @@ fi
 zsh_path=$(which zsh)
 sudo sh -c "echo $zsh_path >> /etc/shells"
 chsh -s $zsh_path
-
 
 echo "Installing yazi plugins..."
 sh $HOME/.config/yazi/install.sh
