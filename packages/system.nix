@@ -11,6 +11,7 @@ in
     brave
     discord
     feh
+    feishin
     gimp
     mpv
     notepadqq
@@ -56,12 +57,14 @@ in
   inherit (pkgs)
     awesome
     pamixer
-    pavucontrol
     picom-pijulius
     playerctl
     polybar
     rofi
     scrot;
+
+  inherit (unstablePkgs)
+    wiremix;
 
   # Xorg related tools
   inherit (xorg)
