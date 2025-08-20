@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 
 keymap = [
 	{ on = ["<Esc>"], run = [ "escape", "unyank" ], desc = "Exit visual mode, clear selected, or cancel search" },
