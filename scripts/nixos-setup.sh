@@ -41,12 +41,3 @@ sudo rm -rf /etc/nixos/
 
 echo "Building configurations..."
 sudo nixos-rebuild switch -I nixos-config=$HOME/.config/nixos/configuration.nix
-
-echo "Installing yazi plugins..."
-ya pkg install
-
-echo "Installing zsh plugins..."
-source $HOME/.zshenv
-
-echo "Installing neovim plugins..."
-nvim +Lazy

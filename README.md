@@ -2,23 +2,6 @@
 
 ![Screenshot2](screenshot2.png)
 
-## Contains configs for:
-
-- [alacritty](configs/alacritty)
-- [awesomeWM](configs/awesome)
-- [btop](configs/btop)
-- [lazygit & lazydocker](configs/lazy)
-- [neovim](configs/nvim)
-- [picom](configs/picom)
-- [polybar](configs/polybar)
-- [skhd](configs/skhd)
-- [starship](configs/starship)
-- [tmux](configs/tmux)
-- [wezterm](configs/wezterm)
-- [yabai](configs/yabai)
-- [yazi](configs/yazi)
-- [zsh](configs/zsh)
-
 ---
 
 ## NixOS setup
@@ -34,6 +17,12 @@
 git clone https://github.com/PedroDSFerreira/dotfiles.git ~/.dotfiles && \
     cd ~/.dotfiles && \
     sh scripts/nixos-setup.sh
+```
+
+After running the installation script, cd into `~/.dotfiles` and run:
+```sh
+sh scripts/post-install.sh
+
 ```
 
 ## MacOS setup

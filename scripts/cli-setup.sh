@@ -37,11 +37,5 @@ zsh_path=$(which zsh)
 sudo sh -c "echo $zsh_path >> /etc/shells"
 chsh -s $zsh_path
 
-echo "Installing yazi plugins..."
-ya pkg install
-
-echo "Installing zsh plugins..."
-source $HOME/.zshenv
-
-echo "Installing neovim plugins..."
-nvim +Lazy
+echo "Executing post-install script..."
+sh post-install.sh
