@@ -3,7 +3,7 @@
 set -e
 
 echo "Generating SSH keys..."
-ssh-keygen -t ed25519 -a 100 -N "" -f $HOME/.ssh/master-key
+ssh-keygen -t ed25519 -a 100 -N "" -f $HOME/.ssh/id_ed25519
 
 echo "Setting up NixOS channels..."
 sudo nix-channel --add https://channels.nixos.org/nixos-25.05 nixos

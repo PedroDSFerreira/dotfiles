@@ -3,7 +3,7 @@
 set -e
 
 echo "Generating SSH keys..."
-ssh-keygen -t ed25519 -a 100 -N "" -f $HOME/.ssh/master-key
+ssh-keygen -t ed25519 -a 100 -N "" -f $HOME/.ssh/id_ed25519
 
 echo "Installing Nix unstable channel..."
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
