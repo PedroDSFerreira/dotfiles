@@ -36,6 +36,67 @@ local function setup_sloppy_focus()
     -- end)
 end
 
+-- Polybar fullscreen management
+local function setup_polybar_fullscreen_management()
+    -- Function to check if any client is fullscreen
+    local function is_any_client_fullscreen()
+        for _, c in ipairs(client.get()) do
+            if c.fullscreen and c:isvisible() then
+                return true
+            end
+        end
+        return false
+    end
+    
+    -- Function to manage polybar visibility
+    local function manage_polybar_visibility()
+        if is_any_client_fullscreen() then
+            -- Hide polybar when any client is fullscreen
+            awful.spawn.with_shell("killall -q polybar")
+            awful.spawn.with_shell("polybar-msg cmd quit")
+        else
+            -- Restore polybar when no clients are fullscreen
+            awful.spawn.with_shell("pgrep polybar > /dev/null || (polybar mybar 2>&1 | tee -a /tmp/polybar.log &)")
+        end
+    end
+    
+    -- Connect signals for fullscreen changes
+    client.connect_signal("property::fullscreen", function(c)
+        manage_polybar_visibility()
+    end)
+    
+    -- Also handle when clients are managed/unmanaged
+    client.connect_signal("manage", function(c)
+        manage_polybar_visibility()
+    end)
+    
+    client.connect_signal("unmanage", function(c)
+        manage_polybar_visibility()
+    end)
+    
+    -- Handle when clients become visible/invisible
+    client.connect_signal("property::hidden", function(c)
+        manage_polybar_visibility()
+    end)
+    
+    client.connect_signal("property::minimized", function(c)
+        manage_polybar_visibility()
+    end)
+    
+    -- Handle screen/tag changes that might affect fullscreen visibility
+    client.connect_signal("tagged", function(c)
+        if c.fullscreen then
+            manage_polybar_visibility()
+        end
+    end)
+    
+    client.connect_signal("untagged", function(c)
+        if c.fullscreen then
+            manage_polybar_visibility()
+        end
+    end)
+end
+
 -- Return signals configuration
 return {
     -- Setup function to be called by rc.lua
@@ -43,10 +104,12 @@ return {
         setup_client_management()
         setup_focus_management()
         setup_sloppy_focus()
+        setup_polybar_fullscreen_management()
     end,
     
     -- Individual setup functions for granular control
     setup_client_management = setup_client_management,
     setup_focus_management = setup_focus_management,
-    setup_sloppy_focus = setup_sloppy_focus
+    setup_sloppy_focus = setup_sloppy_focus,
+    setup_polybar_fullscreen_management = setup_polybar_fullscreen_management
 }
