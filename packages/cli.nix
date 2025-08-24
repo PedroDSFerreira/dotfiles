@@ -32,6 +32,7 @@ in
     sshs
     starship
     stow
+    systemctl-tui
     tealdeer
     thokr
     tmux;
