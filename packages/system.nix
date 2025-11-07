@@ -20,6 +20,7 @@ in
     simplescreenrecorder
     spotify
     stremio
+    vscode-fhs
     wezterm;
 
   # Development tools
