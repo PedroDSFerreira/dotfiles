@@ -20,6 +20,12 @@ function upload-tmp() {
   curl -F "file=@$1" https://temp.sh/upload
 }
 
+function download-tmp() {
+  url="$1"
+  filename="${url##*/}"
+  curl -X POST -L "$url" -o "$filename"
+}
+
 function h() {
     history 0 | awk '{$1=""}1' | fzf-tmux -p --layout reverse --tac | zsh
 }
